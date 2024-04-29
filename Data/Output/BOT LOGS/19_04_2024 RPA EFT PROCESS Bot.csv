@@ -1,0 +1,64 @@
+﻿Date_time,Xaml_Name,Status,UserName,LogSource,Comments
+19/04/2024 09:46:47 AM,InIt,Working,,Log,Process started
+19/04/2024 09:47:04 AM,Process,Working,,Log,Process started
+19/04/2024 09:47:04 AM,Process,Working,,FOR PA,FOR PA STARTED
+19/04/2024 09:47:20 AM,Process,Working,,Log PAGE NUMBER IS 234, for Resident Barth, Edward  Amount is 18.94
+19/04/2024 09:47:36 AM,Process,Working,,Log PAGE NUMBER IS 410, for Resident Beaver, Mary Ellen Amount is 0.00
+19/04/2024 09:47:41 AM,Process,Working,,Log PAGE NUMBER IS 4, for Resident George, John Amount is 1,065.80
+19/04/2024 09:47:45 AM,Process,Working,,Log PAGE NUMBER IS 14, for Resident Burris, Roxana D. Amount is 89.01
+19/04/2024 09:49:43 AM,InIt,Working,,Log,Process started
+19/04/2024 09:50:00 AM,Process,Working,,Log,Process started
+19/04/2024 09:50:00 AM,Process,Working,,FOR PA,FOR PA STARTED
+19/04/2024 09:51:26 AM,Process,Working,,Log PAGE NUMBER IS 234, for Resident Barth, Edward  Amount is 18.94
+19/04/2024 09:52:14 AM,Process,Working,,Log PAGE NUMBER IS 410, for Resident Beaver, Mary Ellen Amount is 0.00
+19/04/2024 09:56:10 AM,InIt,Working,,Log,Process started
+19/04/2024 09:56:29 AM,Process,Working,,Log,Process started
+19/04/2024 09:56:29 AM,Process,Working,,FOR PA,FOR PA STARTED
+19/04/2024 10:00:09 AM,InIt,Working,,Log,Process started
+19/04/2024 10:00:29 AM,Process,Working,,Log,Process started
+19/04/2024 10:00:29 AM,Process,Working,,FOR PA,FOR PA STARTED
+19/04/2024 10:01:43 AM,Process,Working,,Log PAGE NUMBER IS 4, for Resident George, John Amount is -         1,065.80
+19/04/2024 10:10:15 AM,InIt,Working,,Log,Process started
+19/04/2024 10:10:32 AM,Process,Working,,Log,Process started
+19/04/2024 10:10:32 AM,Process,Working,,FOR PA,FOR PA STARTED
+19/04/2024 10:10:38 AM,Process,Working,,Log PAGE NUMBER IS 4, for Resident George, John Amount is -         1,065.80
+19/04/2024 10:10:53 AM,Process,Working,,Log PAGE NUMBER IS 410, for Resident Beaver, Mary Ellen Amount is 0.00
+19/04/2024 10:10:57 AM,Process,Working,,Log PAGE NUMBER IS 4, for Resident George, John Amount is -         1,065.80
+19/04/2024 10:11:01 AM,Process,Working,,Log PAGE NUMBER IS 14, for Resident Burris, Roxana D. Amount is 89.01
+19/04/2024 10:11:31 AM,Process,Working,,Log,Unable to find the Resident BURROWS , SUZANE
+19/04/2024 10:11:31 AM,Process,Working,,Log PAGE NUMBER IS None, for Resident BURROWS , SUZANE Amount NOT FOUND 
+19/04/2024 10:11:44 AM,Process,Working,,Log PAGE NUMBER IS 345, for Resident Cole, Barbara Amount is 214.53
+19/04/2024 10:12:13 AM,Process,Working,,Log,Unable to find the Resident Coulson, Patricia 
+19/04/2024 10:12:13 AM,Process,Working,,Log PAGE NUMBER IS None, for Resident Coulson, Patricia  Amount NOT FOUND 
+19/04/2024 10:12:42 AM,Process,Working,,Log,Unable to find the Resident Derman, Bernyce
+19/04/2024 10:12:42 AM,Process,Working,,Log PAGE NUMBER IS None, for Resident Derman, Bernyce Amount NOT FOUND 
+19/04/2024 10:13:14 AM,Process,Working,,Log,Unable to find the Resident Derr, Derl
+19/04/2024 10:13:14 AM,Process,Working,,Log PAGE NUMBER IS None, for Resident Derr, Derl Amount NOT FOUND 
+19/04/2024 10:13:28 AM,Process,Working,,Log PAGE NUMBER IS 387, for Resident Eisenhart, Elizabeth Amount is 2.00
+19/04/2024 10:13:46 AM,Process,Working,,Log PAGE NUMBER IS 16, for Resident Eshleman, Anne-Marie Amount is 473.85
+19/04/2024 10:14:00 AM,Process,Working,,Log PAGE NUMBER IS 388, for Resident FREY, ALICE Amount is 1.96
+19/04/2024 10:14:15 AM,Process,Working,,Log PAGE NUMBER IS 389, for Resident FREY , STUART Amount is 2.94
+19/04/2024 10:14:19 AM,Process,Working,,Log PAGE NUMBER IS 3, for Resident George, Jean Amount is 67.96
+19/04/2024 10:14:23 AM,Process,Working,,Log PAGE NUMBER IS 4, for Resident George, John Amount is -         1,065.80
+19/04/2024 10:14:39 AM,Process,Working,,Log PAGE NUMBER IS 418, for Resident Gernant, Elizabeth  Amount is 0.00
+19/04/2024 10:14:43 AM,Process,Working,,Log PAGE NUMBER IS 5, for Resident Harp, Rosanna Amount is 185.17
+19/04/2024 10:14:48 AM,Process,Working,,Log PAGE NUMBER IS 54, for Resident Hartz, Shirley  Amount is 300.19
+19/04/2024 10:14:58 AM,Process,Working,,Log PAGE NUMBER IS 241, for Resident Hensel, Roy Amount is 23.01
+19/04/2024 10:15:05 AM,Process,Working,,Log PAGE NUMBER IS 113, for Resident Hoffman, Christina Amount is 0.00
+19/04/2024 10:15:14 AM,Process,Working,,Log PAGE NUMBER IS 165, for Resident Hummer, Margaret Amount is 25.46
+19/04/2024 10:15:22 AM,Process,Working,,Log PAGE NUMBER IS 139, for Resident James, Margaret B. Amount is 213.97
+19/04/2024 10:15:38 AM,Process,Working,,Log PAGE NUMBER IS 428, for Resident Johnson, Donald Amount is 26.70
+19/04/2024 10:15:54 AM,Process,Working,,Log PAGE NUMBER IS 430, for Resident Johnson, Wilma Amount is 79.41
+19/04/2024 10:17:42 AM,InIt,Working,,Log,Process started
+19/04/2024 10:18:01 AM,Process,Working,,Log,Process started
+19/04/2024 10:18:01 AM,Process,Working,,FOR PA,FOR PA STARTED
+19/04/2024 10:18:34 AM,Process,Working,,Log PAGE NUMBER IS 4, for Resident George, John Amount is -         1,065.80
+19/04/2024 10:19:14 AM,Process,Working,,Log PAGE NUMBER IS 410, for Resident Beaver, Mary Ellen Amount is 0.00
+19/04/2024 10:19:49 AM,Process,Working,,Log PAGE NUMBER IS 4, for Resident George, John Amount is -         1,065.80
+19/04/2024 10:25:06 AM,InIt,Working,,Log,Process started
+19/04/2024 10:25:25 AM,Process,Working,,Log,Process started
+19/04/2024 10:25:25 AM,Process,Working,,FOR PA,FOR PA STARTED
+19/04/2024 10:25:33 AM,Process,Working,,Log PAGE NUMBER IS 4, for Resident George, John Amount is -         1,065.80
+19/04/2024 10:25:37 AM,Process,Working,,Log PAGE NUMBER IS 6, for Resident LEIDY, ELIZABETH Amount is -              6.04
+19/04/2024 10:25:41 AM,Process,Working,,Log PAGE NUMBER IS 18, for Resident FRAK, JOYCE S Amount is -            74.47
+19/04/2024 10:25:45 AM,Process,Working,,Log PAGE NUMBER IS 14, for Resident Burris, Roxana D. Amount is 89.01

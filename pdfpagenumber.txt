@@ -1,0 +1,21 @@
+import PyPDF2
+ 
+def find_page_number_text(doc, target_string):
+    for page_number in range(len(doc.pages)):
+        page = doc.pages[page_number]  # Use reader.pages[page_number] instead of getPage
+        page_text = page.extract_text()
+        if target_string in page_text:
+            return page_number + 1  # Adding 1 because page numbers are usually 1-based
+    return None
+ 
+pdf_path = "/Users/akashvishwakarma/pa.pdf"
+ 
+with open(pdf_path, "rb") as pdf_file:
+    pdf_reader = PyPDF2.PdfReader(pdf_file)
+    target = "KOLMEN, BARBARA"
+    page_number = find_page_number_text(pdf_reader, target)
+ 
+    if page_number is not None:
+        print(f"The target string '{target}' is on PDF page {page_number}.")
+    else:
+        print(f"The target string '{target}' was not found in the PDF document.")
