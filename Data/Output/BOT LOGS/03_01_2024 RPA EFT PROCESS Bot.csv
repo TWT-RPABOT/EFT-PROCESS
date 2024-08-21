@@ -1,0 +1,327 @@
+﻿Date_time,Xaml_Name,Status,UserName,LogSource,Comments
+03/01/2024 15:34:03 PM,InIt,Working,,Log,Process started
+03/01/2024 15:35:10 PM,InIt,Working,,Log,Process started
+03/01/2024 16:30:39 PM,InIt,Working,,Log,Process started
+03/01/2024 16:31:04 PM,Process,Working,,Log,Process started
+03/01/2024 16:31:04 PM,Process,Working,,FOR PA,FOR PA STARTED
+03/01/2024 16:31:19 PM,Process,Working,,Log PAGE NUMBER IS 234, for Resident Barth, Edward  Amount is 155.28
+03/01/2024 16:31:29 PM,Process,Working,,Log PAGE NUMBER IS 227, for Resident Coulson, Patricia  Amount is 4.48
+03/01/2024 16:31:46 PM,Process,Working,,Log,Unable to find the Resident Berg, Marcus 
+03/01/2024 16:31:48 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Berg, Marcus  Amount NOT FOUND 
+03/01/2024 16:31:54 PM,Process,Working,,Log PAGE NUMBER IS 20, for Resident Burris, Roxana D. Amount is 97.59
+03/01/2024 16:32:12 PM,Process,Working,,Log,Unable to find the Resident BURROWS , SUZANE
+03/01/2024 16:32:14 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident BURROWS , SUZANE Amount NOT FOUND 
+03/01/2024 16:32:25 PM,Process,Working,,Log PAGE NUMBER IS 345, for Resident Cole, Barbara Amount is 112.64
+03/01/2024 16:32:34 PM,Process,Working,,Log PAGE NUMBER IS 227, for Resident Coulson, Patricia  Amount is 4.48
+03/01/2024 16:32:44 PM,Process,Working,,Log PAGE NUMBER IS 272, for Resident Derman, Bernyce Amount is 0.00
+03/01/2024 16:33:01 PM,Process,Working,,Log,Unable to find the Resident Derr, Derl
+03/01/2024 16:33:04 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Derr, Derl Amount NOT FOUND 
+03/01/2024 16:33:15 PM,Process,Working,,Log PAGE NUMBER IS 382, for Resident Eisenhart, Elizabeth Amount is 59.24
+03/01/2024 16:33:23 PM,Process,Working,,Log PAGE NUMBER IS 112, for Resident Erickson, Leroy Amount is 156.84
+03/01/2024 16:33:37 PM,Process,Working,,Log PAGE NUMBER IS 22, for Resident Eshleman, Anne-Marie Amount is 417.73
+03/01/2024 16:33:48 PM,Process,Working,,Log PAGE NUMBER IS 383, for Resident FREY, ALICE Amount is 0.00
+03/01/2024 16:34:00 PM,Process,Working,,Log PAGE NUMBER IS 384, for Resident FREY , STUART Amount is 31.40
+03/01/2024 16:34:06 PM,Process,Working,,Log PAGE NUMBER IS 6, for Resident George, Jean Amount is 57.22
+03/01/2024 16:34:12 PM,Process,Working,,Log PAGE NUMBER IS 7, for Resident George, John Amount is 910.65
+03/01/2024 16:34:24 PM,Process,Working,,Log PAGE NUMBER IS 416, for Resident Gernant, Elizabeth  Amount is 0.00
+03/01/2024 16:34:30 PM,Process,Working,,Log PAGE NUMBER IS 8, for Resident Harp, Rosanna Amount is 147.62
+03/01/2024 16:34:37 PM,Process,Working,,Log PAGE NUMBER IS 66, for Resident Hartz, Shirley  Amount is 221.34
+03/01/2024 16:34:47 PM,Process,Working,,Log PAGE NUMBER IS 241, for Resident Hensel, Roy Amount is 5.66
+03/01/2024 16:35:04 PM,Process,Working,,Log,Unable to find the Resident Hoffman, Christina
+03/01/2024 16:35:06 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Hoffman, Christina Amount NOT FOUND 
+03/01/2024 16:35:17 PM,Process,Working,,Log PAGE NUMBER IS 386, for Resident Hummer, Margaret Amount is 142.02
+03/01/2024 16:35:26 PM,Process,Working,,Log PAGE NUMBER IS 143, for Resident James, Margaret B. Amount is 206.71
+03/01/2024 16:35:38 PM,Process,Working,,Log PAGE NUMBER IS 426, for Resident Johnson, Donald Amount is 20.73
+03/01/2024 16:35:51 PM,Process,Working,,Log PAGE NUMBER IS 428, for Resident Johnson, Wilma Amount is 156.45
+03/01/2024 16:36:09 PM,Process,Working,,Log,Unable to find the Resident Kastner, Margaret
+03/01/2024 16:36:11 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Kastner, Margaret Amount NOT FOUND 
+03/01/2024 16:36:29 PM,Process,Working,,Log,Unable to find the Resident King, Natalie M.
+03/01/2024 16:36:31 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident King, Natalie M. Amount NOT FOUND 
+03/01/2024 16:36:39 PM,Process,Working,,Log PAGE NUMBER IS 199, for Resident Krebs, Leroy E. Amount is 43.20
+03/01/2024 16:36:52 PM,Process,Working,,Log PAGE NUMBER IS 430, for Resident Lahiff, Barbara Amount is 144.37
+03/01/2024 16:37:09 PM,Process,Working,,Log,Unable to find the Resident Lahiff, Lawrence
+03/01/2024 16:37:11 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Lahiff, Lawrence Amount NOT FOUND 
+03/01/2024 16:37:24 PM,Process,Working,,Log PAGE NUMBER IS 431, for Resident Laird, Janet  Amount is 208.11
+03/01/2024 16:37:31 PM,Process,Working,,Log PAGE NUMBER IS 83, for Resident Lambert, William Amount is 229.36
+03/01/2024 16:37:48 PM,Process,Working,,Log,Unable to find the Resident Latshaw, Diane M.
+03/01/2024 16:37:50 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Latshaw, Diane M. Amount NOT FOUND 
+03/01/2024 16:37:59 PM,Process,Working,,Log PAGE NUMBER IS 230, for Resident Leaman, Jean Amount is 185.01
+03/01/2024 16:38:08 PM,Process,Working,,Log PAGE NUMBER IS 147, for Resident Lewis, Roberta Amount is 186.67
+03/01/2024 16:38:25 PM,Process,Working,,Log,Unable to find the Resident Libby, Dawn
+03/01/2024 16:38:27 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Libby, Dawn Amount NOT FOUND 
+03/01/2024 16:38:45 PM,Process,Working,,Log,Unable to find the Resident Libby, Linton
+03/01/2024 16:38:47 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Libby, Linton Amount NOT FOUND 
+03/01/2024 16:38:56 PM,Process,Working,,Log PAGE NUMBER IS 244, for Resident Lieberman, Margaret Amount is 192.29
+03/01/2024 16:39:05 PM,Process,Working,,Log PAGE NUMBER IS 180, for Resident Logsdon, Sandra L Amount is 108.26
+03/01/2024 16:39:11 PM,Process,Working,,Log PAGE NUMBER IS 11, for Resident Loring, Mary J. Amount is 93.66
+03/01/2024 16:39:28 PM,Process,Working,,Log,Unable to find the Resident Luce, Ellen
+03/01/2024 16:39:30 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Luce, Ellen Amount NOT FOUND 
+03/01/2024 16:39:48 PM,Process,Working,,Log,Unable to find the Resident Moyer, Margaret
+03/01/2024 16:39:50 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Moyer, Margaret Amount NOT FOUND 
+03/01/2024 16:40:07 PM,Process,Working,,Log,Unable to find the Resident Nardella, Ruth
+03/01/2024 16:40:09 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Nardella, Ruth Amount NOT FOUND 
+03/01/2024 16:40:17 PM,Process,Working,,Log PAGE NUMBER IS 117, for Resident Nelson, Gladys  Amount is 8.00
+03/01/2024 16:40:29 PM,Process,Working,,Log PAGE NUMBER IS 437, for Resident Newman, James Amount is 68.87
+03/01/2024 16:40:40 PM,Process,Working,,Log PAGE NUMBER IS 307, for Resident Newman, Janet Amount is 255.44
+03/01/2024 16:40:57 PM,Process,Working,,Log,Unable to find the Resident Norman, Jasper 
+03/01/2024 16:40:59 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Norman, Jasper  Amount NOT FOUND 
+03/01/2024 16:41:16 PM,Process,Working,,Log,Unable to find the Resident Osborn Barbara
+03/01/2024 16:41:18 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Osborn Barbara Amount NOT FOUND 
+03/01/2024 16:41:28 PM,Process,Working,,Log PAGE NUMBER IS 277, for Resident Peters, Naomi Amount is 288.04
+03/01/2024 16:41:36 PM,Process,Working,,Log PAGE NUMBER IS 70, for Resident Royer, Anna Amount is 210.67
+03/01/2024 16:41:44 PM,Process,Working,,Log PAGE NUMBER IS 156, for Resident Schriver, Anna S. Amount is 131.18
+03/01/2024 16:41:51 PM,Process,Working,,Log PAGE NUMBER IS 72, for Resident SEITZ, NANCY Amount is 317.90
+03/01/2024 16:42:00 PM,Process,Working,,Log PAGE NUMBER IS 103, for Resident SEIDEL, ROSANN Amount is 211.06
+03/01/2024 16:42:10 PM,Process,Working,,Log PAGE NUMBER IS 299, for Resident Spriggle, Norma Amount is 357.28
+03/01/2024 16:42:20 PM,Process,Working,,Log PAGE NUMBER IS 256, for Resident Stamm, Celia Amount is 106.79
+03/01/2024 16:42:38 PM,Process,Working,,Log,Unable to find the Resident Stell, Margaret
+03/01/2024 16:42:40 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Stell, Margaret Amount NOT FOUND 
+03/01/2024 16:42:52 PM,Process,Working,,Log PAGE NUMBER IS 446, for Resident Sukonick, Marge Amount is 124.60
+03/01/2024 16:42:58 PM,Process,Working,,Log PAGE NUMBER IS 43, for Resident Taitt, Henry  Amount is 174.20
+03/01/2024 16:43:07 PM,Process,Working,,Log PAGE NUMBER IS 206, for Resident Walters, Gwendolyn Amount is 83.05
+03/01/2024 16:43:19 PM,Process,Working,,Log PAGE NUMBER IS 402, for Resident Webb, Sheila Amount is 37.58
+03/01/2024 16:43:32 PM,Process,Working,,Log PAGE NUMBER IS 452, for Resident Wilder, David Amount is 141.19
+03/01/2024 16:43:50 PM,Process,Working,,Log,Unable to find the Resident Wilder, Margaret
+03/01/2024 16:43:52 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Wilder, Margaret Amount NOT FOUND 
+03/01/2024 16:44:09 PM,Process,Working,,Log,Unable to find the Resident Wood, Jerline 
+03/01/2024 16:44:11 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Wood, Jerline  Amount NOT FOUND 
+03/01/2024 16:44:29 PM,Process,Working,,Log,Unable to find the Resident Woodring, Adeline
+03/01/2024 16:44:31 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Woodring, Adeline Amount NOT FOUND 
+03/01/2024 16:44:43 PM,Process,Working,,Log PAGE NUMBER IS 454, for Resident Woodruff, Christine Amount is 549.18
+03/01/2024 16:44:51 PM,Process,Working,,Log PAGE NUMBER IS 91, for Resident Woods, Barbara     Amount is 53.96
+03/01/2024 16:45:03 PM,Process,Working,,Log PAGE NUMBER IS 455, for Resident Wright, Elizabeth Amount is 483.66
+03/01/2024 16:45:15 PM,Process,Working,,Log PAGE NUMBER IS 404, for Resident Wright, Lena Amount is 0.00
+03/01/2024 16:45:27 PM,Process,Working,,Log PAGE NUMBER IS 405, for Resident Wyre, Frances A. Amount is 8.83
+03/01/2024 16:45:39 PM,Process,Working,,Log PAGE NUMBER IS 458, for Resident Zimmerman, Joan Amount is 282.63
+03/01/2024 16:45:40 PM,Process,Working,,FOR PA,FOR PA COMPLETED
+03/01/2024 16:45:40 PM,Process,Working,,FOR MD,FOR MD STARTED
+03/01/2024 16:47:12 PM,Process,Working,,Log PAGE NUMBER IS 119, for Resident Barsotti , Frank  Amount is 145.44
+03/01/2024 16:47:18 PM,Process,Working,,Log PAGE NUMBER IS 1, for Resident Beltz, Dorothy C.  Amount is 18.00
+03/01/2024 16:47:26 PM,Process,Working,,Log PAGE NUMBER IS 120, for Resident BAUER, SHIRLEY A. Amount is 96.73
+03/01/2024 16:47:31 PM,Process,Working,,Log PAGE NUMBER IS 5, for Resident Brockway , Patricia  Amount is 179.80
+03/01/2024 16:47:44 PM,Process,Working,,Log,Unable to find the Resident BROWN, EMILY G.
+03/01/2024 16:47:46 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident BROWN, EMILY G. Amount NOT FOUND 
+03/01/2024 16:47:53 PM,Process,Working,,Log PAGE NUMBER IS 125, for Resident BROWN, NANCY E. Amount is 101.91
+03/01/2024 16:48:05 PM,Process,Working,,Log,Unable to find the Resident CHANDLER, HARTWELL
+03/01/2024 16:48:07 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident CHANDLER, HARTWELL Amount NOT FOUND 
+03/01/2024 16:48:13 PM,Process,Working,,Log PAGE NUMBER IS 10, for Resident DELMAGE, SHIRLEY Amount is 82.06
+03/01/2024 16:48:25 PM,Process,Working,,Log,Unable to find the Resident DOOLAN, DENISE
+03/01/2024 16:48:27 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident DOOLAN, DENISE Amount NOT FOUND 
+03/01/2024 16:48:33 PM,Process,Working,,Log PAGE NUMBER IS 15, for Resident EATON, GAIL Amount is 125.65
+03/01/2024 16:48:39 PM,Process,Working,,Log PAGE NUMBER IS 16, for Resident FABRIZIO, JOSEPHINE Amount is 683.24
+03/01/2024 16:48:45 PM,Process,Working,,Log PAGE NUMBER IS 17, for Resident FEINBERG, DOROTHY  Amount is 66.56
+03/01/2024 16:48:57 PM,Process,Working,,Log,Unable to find the Resident FERETTE, ARLETA
+03/01/2024 16:48:59 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident FERETTE, ARLETA Amount NOT FOUND 
+03/01/2024 16:49:10 PM,Process,Working,,Log,Unable to find the Resident FERETTE, Joel 
+03/01/2024 16:49:12 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident FERETTE, Joel  Amount NOT FOUND 
+03/01/2024 16:49:20 PM,Process,Working,,Log PAGE NUMBER IS 144, for Resident FERRICK, LYNN Amount is 119.91
+03/01/2024 16:49:28 PM,Process,Working,,Log PAGE NUMBER IS 145, for Resident FISHER, JULIA B. Amount is 796.65
+03/01/2024 16:49:34 PM,Process,Working,,Log PAGE NUMBER IS 24, for Resident FULTON, RUTH Amount is 36.38
+03/01/2024 16:49:43 PM,Process,Working,,Log PAGE NUMBER IS 254, for Resident GALLAGHER, WILLIAM Amount is 22.61
+03/01/2024 16:49:50 PM,Process,Working,,Log PAGE NUMBER IS 25, for Resident Gerard, Arlene  Amount is 53.00
+03/01/2024 16:50:01 PM,Process,Working,,Log,Unable to find the Resident HARPER, GENEVIEVE M.
+03/01/2024 16:50:03 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident HARPER, GENEVIEVE M. Amount NOT FOUND 
+03/01/2024 16:50:10 PM,Process,Working,,Log PAGE NUMBER IS 36, for Resident HOWES, JANET Amount is 114.88
+03/01/2024 16:50:21 PM,Process,Working,,Log,Unable to find the Resident KENYON, SUSAN
+03/01/2024 16:50:23 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident KENYON, SUSAN Amount NOT FOUND 
+03/01/2024 16:50:35 PM,Process,Working,,Log,Unable to find the Resident LANE, ELZABETH 
+03/01/2024 16:50:37 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident LANE, ELZABETH  Amount NOT FOUND 
+03/01/2024 16:50:48 PM,Process,Working,,Log,Unable to find the Resident LAWRENCE, PEGGY-RUTH
+03/01/2024 16:50:51 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident LAWRENCE, PEGGY-RUTH Amount NOT FOUND 
+03/01/2024 16:50:58 PM,Process,Working,,Log PAGE NUMBER IS 161, for Resident LEFEVER, MARGARET B. Amount is 149.45
+03/01/2024 16:51:10 PM,Process,Working,,Log,Unable to find the Resident LEM, JOHN
+03/01/2024 16:51:12 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident LEM, JOHN Amount NOT FOUND 
+03/01/2024 16:51:18 PM,Process,Working,,Log PAGE NUMBER IS 51, for Resident LEM, MADGE Amount is 5.21
+03/01/2024 16:51:26 PM,Process,Working,,Log PAGE NUMBER IS 163, for Resident LOZUPONE, FRANK Amount is 182.90
+03/01/2024 16:51:33 PM,Process,Working,,Log PAGE NUMBER IS 66, for Resident MAROULIS, JOAN Amount is 137.30
+03/01/2024 16:51:40 PM,Process,Working,,Log PAGE NUMBER IS 67, for Resident McCRORIE, ELLEN S. Amount is 39.73
+03/01/2024 16:51:47 PM,Process,Working,,Log PAGE NUMBER IS 70, for Resident McILRATH, VALERIE Amount is 91.38
+03/01/2024 16:51:58 PM,Process,Working,,Log,Unable to find the Resident MIDDLETON, NANCY
+03/01/2024 16:52:01 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident MIDDLETON, NANCY Amount NOT FOUND 
+03/01/2024 16:52:10 PM,Process,Working,,Log PAGE NUMBER IS 258, for Resident MULDOON, MARYELLEN Amount is 83.27
+03/01/2024 16:52:17 PM,Process,Working,,Log PAGE NUMBER IS 76, for Resident NEFF, JOAN Amount is 0.00
+03/01/2024 16:52:29 PM,Process,Working,,Log,Unable to find the Resident PALFREY, ANNE
+03/01/2024 16:52:31 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident PALFREY, ANNE Amount NOT FOUND 
+03/01/2024 16:52:42 PM,Process,Working,,Log,Unable to find the Resident ROCHELLE, (SHELLY) SMITH
+03/01/2024 16:52:45 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident ROCHELLE, (SHELLY) SMITH Amount NOT FOUND 
+03/01/2024 16:52:53 PM,Process,Working,,Log PAGE NUMBER IS 239, for Resident SALZMAN, RAYMOND Amount is 33.67
+03/01/2024 16:53:05 PM,Process,Working,,Log,Unable to find the Resident SCHIMKE, BARBARA
+03/01/2024 16:53:07 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident SCHIMKE, BARBARA Amount NOT FOUND 
+03/01/2024 16:53:14 PM,Process,Working,,Log PAGE NUMBER IS 88, for Resident Seelman, Gloria  Amount is 158.78
+03/01/2024 16:53:23 PM,Process,Working,,Log PAGE NUMBER IS 242, for Resident SHAFFNER, JAMES A. Amount is 0.00
+03/01/2024 16:53:35 PM,Process,Working,,Log,Unable to find the Resident STEVENSON, BEVERLY 
+03/01/2024 16:53:37 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident STEVENSON, BEVERLY  Amount NOT FOUND 
+03/01/2024 16:53:44 PM,Process,Working,,Log PAGE NUMBER IS 95, for Resident TAN, ENG SENG Amount is 132.95
+03/01/2024 16:53:51 PM,Process,Working,,Log PAGE NUMBER IS 94, for Resident TAN-CHOY, CHUN SANG Amount is 37.38
+03/01/2024 16:53:58 PM,Process,Working,,Log PAGE NUMBER IS 96, for Resident TAYLOR, DONNA W. Amount is 15.95
+03/01/2024 16:54:12 PM,Process,Working,,Log,Unable to find the Resident Thiebaud, Doris
+03/01/2024 16:54:14 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Thiebaud, Doris Amount NOT FOUND 
+03/01/2024 16:54:25 PM,Process,Working,,Log PAGE NUMBER IS 264, for Resident WEBB, MARY L. Amount is 91.54
+03/01/2024 16:54:36 PM,Process,Working,,Log,Unable to find the Resident Wilkerson, Babara 
+03/01/2024 16:54:38 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Wilkerson, Babara  Amount NOT FOUND 
+03/01/2024 16:54:50 PM,Process,Working,,Log,Unable to find the Resident WOOD, VIRGINIA C
+03/01/2024 16:54:52 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident WOOD, VIRGINIA C Amount NOT FOUND 
+03/01/2024 16:54:59 PM,Process,Working,,Log PAGE NUMBER IS 104, for Resident WOODS, JEAN Amount is 88.44
+03/01/2024 16:54:59 PM,Process,completed,,Log,Process completed
+03/01/2024 17:16:45 PM,InIt,Working,,Log,Process started
+03/01/2024 17:16:59 PM,Process,Working,,Log,Process started
+03/01/2024 17:16:59 PM,Process,Working,,FOR PA,FOR PA STARTED
+03/01/2024 17:17:14 PM,Process,Working,,Log PAGE NUMBER IS 234, for Resident Barth, Edward  Amount is 155.28
+03/01/2024 17:17:22 PM,Process,Working,,Log PAGE NUMBER IS 227, for Resident Coulson, Patricia  Amount is 4.48
+03/01/2024 17:17:44 PM,Process,Working,,Log,Unable to find the Resident Berg, Marcus 
+03/01/2024 17:17:44 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Berg, Marcus  Amount NOT FOUND 
+03/01/2024 17:17:47 PM,Process,Working,,Log PAGE NUMBER IS 20, for Resident Burris, Roxana D. Amount is 97.59
+03/01/2024 17:18:08 PM,Process,Working,,Log,Unable to find the Resident BURROWS , SUZANE
+03/01/2024 17:18:08 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident BURROWS , SUZANE Amount NOT FOUND 
+03/01/2024 17:18:18 PM,Process,Working,,Log PAGE NUMBER IS 345, for Resident Cole, Barbara Amount is 112.64
+03/01/2024 17:18:26 PM,Process,Working,,Log PAGE NUMBER IS 227, for Resident Coulson, Patricia  Amount is 4.48
+03/01/2024 17:18:34 PM,Process,Working,,Log PAGE NUMBER IS 272, for Resident Derman, Bernyce Amount is 0.00
+03/01/2024 17:18:56 PM,Process,Working,,Log,Unable to find the Resident Derr, Derl
+03/01/2024 17:18:56 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Derr, Derl Amount NOT FOUND 
+03/01/2024 17:19:06 PM,Process,Working,,Log PAGE NUMBER IS 382, for Resident Eisenhart, Elizabeth Amount is 59.24
+03/01/2024 17:19:12 PM,Process,Working,,Log PAGE NUMBER IS 112, for Resident Erickson, Leroy Amount is 156.84
+03/01/2024 17:19:26 PM,Process,Working,,Log PAGE NUMBER IS 22, for Resident Eshleman, Anne-Marie Amount is 417.73
+03/01/2024 17:19:36 PM,Process,Working,,Log PAGE NUMBER IS 383, for Resident FREY, ALICE Amount is 0.00
+03/01/2024 17:19:47 PM,Process,Working,,Log PAGE NUMBER IS 384, for Resident FREY , STUART Amount is 31.40
+03/01/2024 17:19:50 PM,Process,Working,,Log PAGE NUMBER IS 6, for Resident George, Jean Amount is 57.22
+03/01/2024 17:19:53 PM,Process,Working,,Log PAGE NUMBER IS 7, for Resident George, John Amount is 910.65
+03/01/2024 17:20:05 PM,Process,Working,,Log PAGE NUMBER IS 416, for Resident Gernant, Elizabeth  Amount is 0.00
+03/01/2024 17:20:08 PM,Process,Working,,Log PAGE NUMBER IS 8, for Resident Harp, Rosanna Amount is 147.62
+03/01/2024 17:20:12 PM,Process,Working,,Log PAGE NUMBER IS 66, for Resident Hartz, Shirley  Amount is 221.34
+03/01/2024 17:20:20 PM,Process,Working,,Log PAGE NUMBER IS 241, for Resident Hensel, Roy Amount is 5.66
+03/01/2024 17:20:43 PM,Process,Working,,Log,Unable to find the Resident Hoffman, Christina
+03/01/2024 17:20:43 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Hoffman, Christina Amount NOT FOUND 
+03/01/2024 17:20:54 PM,Process,Working,,Log PAGE NUMBER IS 386, for Resident Hummer, Margaret Amount is 142.02
+03/01/2024 17:21:00 PM,Process,Working,,Log PAGE NUMBER IS 143, for Resident James, Margaret B. Amount is 206.71
+03/01/2024 17:21:12 PM,Process,Working,,Log PAGE NUMBER IS 426, for Resident Johnson, Donald Amount is 20.73
+03/01/2024 17:21:23 PM,Process,Working,,Log PAGE NUMBER IS 428, for Resident Johnson, Wilma Amount is 156.45
+03/01/2024 17:21:47 PM,Process,Working,,Log,Unable to find the Resident Kastner, Margaret
+03/01/2024 17:21:47 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Kastner, Margaret Amount NOT FOUND 
+03/01/2024 17:22:08 PM,Process,Working,,Log,Unable to find the Resident King, Natalie M.
+03/01/2024 17:22:08 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident King, Natalie M. Amount NOT FOUND 
+03/01/2024 17:22:15 PM,Process,Working,,Log PAGE NUMBER IS 199, for Resident Krebs, Leroy E. Amount is 43.20
+03/01/2024 17:22:26 PM,Process,Working,,Log PAGE NUMBER IS 430, for Resident Lahiff, Barbara Amount is 144.37
+03/01/2024 17:22:48 PM,Process,Working,,Log,Unable to find the Resident Lahiff, Lawrence
+03/01/2024 17:22:48 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Lahiff, Lawrence Amount NOT FOUND 
+03/01/2024 17:22:59 PM,Process,Working,,Log PAGE NUMBER IS 431, for Resident Laird, Janet  Amount is 208.11
+03/01/2024 17:23:04 PM,Process,Working,,Log PAGE NUMBER IS 83, for Resident Lambert, William Amount is 229.36
+03/01/2024 17:23:25 PM,Process,Working,,Log,Unable to find the Resident Latshaw, Diane M.
+03/01/2024 17:23:25 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Latshaw, Diane M. Amount NOT FOUND 
+03/01/2024 17:23:33 PM,Process,Working,,Log PAGE NUMBER IS 230, for Resident Leaman, Jean Amount is 185.01
+03/01/2024 17:23:39 PM,Process,Working,,Log PAGE NUMBER IS 147, for Resident Lewis, Roberta Amount is 186.67
+03/01/2024 17:24:01 PM,Process,Working,,Log,Unable to find the Resident Libby, Dawn
+03/01/2024 17:24:01 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Libby, Dawn Amount NOT FOUND 
+03/01/2024 17:24:22 PM,Process,Working,,Log,Unable to find the Resident Libby, Linton
+03/01/2024 17:24:22 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Libby, Linton Amount NOT FOUND 
+03/01/2024 17:24:30 PM,Process,Working,,Log PAGE NUMBER IS 244, for Resident Lieberman, Margaret Amount is 192.29
+03/01/2024 17:24:36 PM,Process,Working,,Log PAGE NUMBER IS 180, for Resident Logsdon, Sandra L Amount is 108.26
+03/01/2024 17:24:39 PM,Process,Working,,Log PAGE NUMBER IS 11, for Resident Loring, Mary J. Amount is 93.66
+03/01/2024 17:25:01 PM,Process,Working,,Log,Unable to find the Resident Luce, Ellen
+03/01/2024 17:25:01 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Luce, Ellen Amount NOT FOUND 
+03/01/2024 17:25:22 PM,Process,Working,,Log,Unable to find the Resident Moyer, Margaret
+03/01/2024 17:25:22 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Moyer, Margaret Amount NOT FOUND 
+03/01/2024 17:25:43 PM,Process,Working,,Log,Unable to find the Resident Nardella, Ruth
+03/01/2024 17:25:44 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Nardella, Ruth Amount NOT FOUND 
+03/01/2024 17:25:49 PM,Process,Working,,Log PAGE NUMBER IS 117, for Resident Nelson, Gladys  Amount is 8.00
+03/01/2024 17:26:00 PM,Process,Working,,Log PAGE NUMBER IS 437, for Resident Newman, James Amount is 68.87
+03/01/2024 17:26:09 PM,Process,Working,,Log PAGE NUMBER IS 307, for Resident Newman, Janet Amount is 255.44
+03/01/2024 17:26:31 PM,Process,Working,,Log,Unable to find the Resident Norman, Jasper 
+03/01/2024 17:26:31 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Norman, Jasper  Amount NOT FOUND 
+03/01/2024 17:26:53 PM,Process,Working,,Log,Unable to find the Resident Osborn Barbara
+03/01/2024 17:26:53 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Osborn Barbara Amount NOT FOUND 
+03/01/2024 17:27:01 PM,Process,Working,,Log PAGE NUMBER IS 277, for Resident Peters, Naomi Amount is 288.04
+03/01/2024 17:27:05 PM,Process,Working,,Log PAGE NUMBER IS 70, for Resident Royer, Anna Amount is 210.67
+03/01/2024 17:27:12 PM,Process,Working,,Log PAGE NUMBER IS 156, for Resident Schriver, Anna S. Amount is 131.18
+03/01/2024 17:27:16 PM,Process,Working,,Log PAGE NUMBER IS 72, for Resident SEITZ, NANCY Amount is 317.90
+03/01/2024 17:27:21 PM,Process,Working,,Log PAGE NUMBER IS 103, for Resident SEIDEL, ROSANN Amount is 211.06
+03/01/2024 17:27:30 PM,Process,Working,,Log PAGE NUMBER IS 299, for Resident Spriggle, Norma Amount is 357.28
+03/01/2024 17:27:38 PM,Process,Working,,Log PAGE NUMBER IS 256, for Resident Stamm, Celia Amount is 106.79
+03/01/2024 17:28:00 PM,Process,Working,,Log,Unable to find the Resident Stell, Margaret
+03/01/2024 17:28:00 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Stell, Margaret Amount NOT FOUND 
+03/01/2024 17:28:12 PM,Process,Working,,Log PAGE NUMBER IS 446, for Resident Sukonick, Marge Amount is 124.60
+03/01/2024 17:28:16 PM,Process,Working,,Log PAGE NUMBER IS 43, for Resident Taitt, Henry  Amount is 174.20
+03/01/2024 17:28:23 PM,Process,Working,,Log PAGE NUMBER IS 206, for Resident Walters, Gwendolyn Amount is 83.05
+03/01/2024 17:28:34 PM,Process,Working,,Log PAGE NUMBER IS 402, for Resident Webb, Sheila Amount is 37.58
+03/01/2024 17:28:45 PM,Process,Working,,Log PAGE NUMBER IS 452, for Resident Wilder, David Amount is 141.19
+03/01/2024 17:29:07 PM,Process,Working,,Log,Unable to find the Resident Wilder, Margaret
+03/01/2024 17:29:07 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Wilder, Margaret Amount NOT FOUND 
+03/01/2024 17:29:28 PM,Process,Working,,Log,Unable to find the Resident Wood, Jerline 
+03/01/2024 17:29:28 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Wood, Jerline  Amount NOT FOUND 
+03/01/2024 17:29:50 PM,Process,Working,,Log,Unable to find the Resident Woodring, Adeline
+03/01/2024 17:29:50 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Woodring, Adeline Amount NOT FOUND 
+03/01/2024 17:30:04 PM,Process,Working,,Log PAGE NUMBER IS 454, for Resident Woodruff, Christine Amount is 549.18
+03/01/2024 17:30:09 PM,Process,Working,,Log PAGE NUMBER IS 91, for Resident Woods, Barbara     Amount is 53.96
+03/01/2024 17:30:21 PM,Process,Working,,Log PAGE NUMBER IS 455, for Resident Wright, Elizabeth Amount is 483.66
+03/01/2024 17:30:33 PM,Process,Working,,Log PAGE NUMBER IS 404, for Resident Wright, Lena Amount is 0.00
+03/01/2024 17:30:44 PM,Process,Working,,Log PAGE NUMBER IS 405, for Resident Wyre, Frances A. Amount is 8.83
+03/01/2024 17:30:56 PM,Process,Working,,Log PAGE NUMBER IS 458, for Resident Zimmerman, Joan Amount is 282.63
+03/01/2024 17:30:56 PM,Process,Working,,FOR PA,FOR PA COMPLETED
+03/01/2024 17:30:57 PM,Process,Working,,FOR MD,FOR MD STARTED
+03/01/2024 17:31:02 PM,Process,Working,,Log PAGE NUMBER IS 119, for Resident Barsotti , Frank  Amount is 145.44
+03/01/2024 17:31:04 PM,Process,Working,,Log PAGE NUMBER IS 1, for Resident Beltz, Dorothy C.  Amount is 18.00
+03/01/2024 17:31:10 PM,Process,Working,,Log PAGE NUMBER IS 120, for Resident BAUER, SHIRLEY A. Amount is 96.73
+03/01/2024 17:31:12 PM,Process,Working,,Log PAGE NUMBER IS 5, for Resident Brockway , Patricia  Amount is 179.80
+03/01/2024 17:31:26 PM,Process,Working,,Log,Unable to find the Resident BROWN, EMILY G.
+03/01/2024 17:31:26 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident BROWN, EMILY G. Amount NOT FOUND 
+03/01/2024 17:31:31 PM,Process,Working,,Log PAGE NUMBER IS 125, for Resident BROWN, NANCY E. Amount is 101.91
+03/01/2024 17:31:45 PM,Process,Working,,Log,Unable to find the Resident CHANDLER, HARTWELL
+03/01/2024 17:31:45 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident CHANDLER, HARTWELL Amount NOT FOUND 
+03/01/2024 17:31:48 PM,Process,Working,,Log PAGE NUMBER IS 10, for Resident DELMAGE, SHIRLEY Amount is 82.06
+03/01/2024 17:32:02 PM,Process,Working,,Log,Unable to find the Resident DOOLAN, DENISE
+03/01/2024 17:32:02 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident DOOLAN, DENISE Amount NOT FOUND 
+03/01/2024 17:32:04 PM,Process,Working,,Log PAGE NUMBER IS 15, for Resident EATON, GAIL Amount is 125.65
+03/01/2024 17:32:07 PM,Process,Working,,Log PAGE NUMBER IS 16, for Resident FABRIZIO, JOSEPHINE Amount is 683.24
+03/01/2024 17:32:09 PM,Process,Working,,Log PAGE NUMBER IS 17, for Resident FEINBERG, DOROTHY  Amount is 66.56
+03/01/2024 17:32:26 PM,Process,Working,,Log,Unable to find the Resident FERETTE, ARLETA
+03/01/2024 17:32:26 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident FERETTE, ARLETA Amount NOT FOUND 
+03/01/2024 17:32:40 PM,Process,Working,,Log,Unable to find the Resident FERETTE, Joel 
+03/01/2024 17:32:40 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident FERETTE, Joel  Amount NOT FOUND 
+03/01/2024 17:32:45 PM,Process,Working,,Log PAGE NUMBER IS 144, for Resident FERRICK, LYNN Amount is 119.91
+03/01/2024 17:32:50 PM,Process,Working,,Log PAGE NUMBER IS 145, for Resident FISHER, JULIA B. Amount is 796.65
+03/01/2024 17:32:53 PM,Process,Working,,Log PAGE NUMBER IS 24, for Resident FULTON, RUTH Amount is 36.38
+03/01/2024 17:33:00 PM,Process,Working,,Log PAGE NUMBER IS 254, for Resident GALLAGHER, WILLIAM Amount is 22.61
+03/01/2024 17:33:03 PM,Process,Working,,Log PAGE NUMBER IS 25, for Resident Gerard, Arlene  Amount is 53.00
+03/01/2024 17:33:17 PM,Process,Working,,Log,Unable to find the Resident HARPER, GENEVIEVE M.
+03/01/2024 17:33:17 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident HARPER, GENEVIEVE M. Amount NOT FOUND 
+03/01/2024 17:33:20 PM,Process,Working,,Log PAGE NUMBER IS 36, for Resident HOWES, JANET Amount is 114.88
+03/01/2024 17:33:34 PM,Process,Working,,Log,Unable to find the Resident KENYON, SUSAN
+03/01/2024 17:33:34 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident KENYON, SUSAN Amount NOT FOUND 
+03/01/2024 17:33:48 PM,Process,Working,,Log,Unable to find the Resident LANE, ELZABETH 
+03/01/2024 17:33:48 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident LANE, ELZABETH  Amount NOT FOUND 
+03/01/2024 17:34:01 PM,Process,Working,,Log,Unable to find the Resident LAWRENCE, PEGGY-RUTH
+03/01/2024 17:34:01 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident LAWRENCE, PEGGY-RUTH Amount NOT FOUND 
+03/01/2024 17:34:07 PM,Process,Working,,Log PAGE NUMBER IS 161, for Resident LEFEVER, MARGARET B. Amount is 149.45
+03/01/2024 17:34:21 PM,Process,Working,,Log,Unable to find the Resident LEM, JOHN
+03/01/2024 17:34:21 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident LEM, JOHN Amount NOT FOUND 
+03/01/2024 17:34:24 PM,Process,Working,,Log PAGE NUMBER IS 51, for Resident LEM, MADGE Amount is 5.21
+03/01/2024 17:34:30 PM,Process,Working,,Log PAGE NUMBER IS 163, for Resident LOZUPONE, FRANK Amount is 182.90
+03/01/2024 17:34:34 PM,Process,Working,,Log PAGE NUMBER IS 66, for Resident MAROULIS, JOAN Amount is 137.30
+03/01/2024 17:34:37 PM,Process,Working,,Log PAGE NUMBER IS 67, for Resident McCRORIE, ELLEN S. Amount is 39.73
+03/01/2024 17:34:41 PM,Process,Working,,Log PAGE NUMBER IS 70, for Resident McILRATH, VALERIE Amount is 91.38
+03/01/2024 17:34:55 PM,Process,Working,,Log,Unable to find the Resident MIDDLETON, NANCY
+03/01/2024 17:34:55 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident MIDDLETON, NANCY Amount NOT FOUND 
+03/01/2024 17:35:02 PM,Process,Working,,Log PAGE NUMBER IS 258, for Resident MULDOON, MARYELLEN Amount is 83.27
+03/01/2024 17:35:06 PM,Process,Working,,Log PAGE NUMBER IS 76, for Resident NEFF, JOAN Amount is 0.00
+03/01/2024 17:35:20 PM,Process,Working,,Log,Unable to find the Resident PALFREY, ANNE
+03/01/2024 17:35:20 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident PALFREY, ANNE Amount NOT FOUND 
+03/01/2024 17:35:34 PM,Process,Working,,Log,Unable to find the Resident ROCHELLE, (SHELLY) SMITH
+03/01/2024 17:35:34 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident ROCHELLE, (SHELLY) SMITH Amount NOT FOUND 
+03/01/2024 17:35:41 PM,Process,Working,,Log PAGE NUMBER IS 239, for Resident SALZMAN, RAYMOND Amount is 33.67
+03/01/2024 17:35:56 PM,Process,Working,,Log,Unable to find the Resident SCHIMKE, BARBARA
+03/01/2024 17:35:56 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident SCHIMKE, BARBARA Amount NOT FOUND 
+03/01/2024 17:36:00 PM,Process,Working,,Log PAGE NUMBER IS 88, for Resident Seelman, Gloria  Amount is 158.78
+03/01/2024 17:36:07 PM,Process,Working,,Log PAGE NUMBER IS 242, for Resident SHAFFNER, JAMES A. Amount is 0.00
+03/01/2024 17:36:21 PM,Process,Working,,Log,Unable to find the Resident STEVENSON, BEVERLY 
+03/01/2024 17:36:21 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident STEVENSON, BEVERLY  Amount NOT FOUND 
+03/01/2024 17:36:25 PM,Process,Working,,Log PAGE NUMBER IS 95, for Resident TAN, ENG SENG Amount is 132.95
+03/01/2024 17:36:29 PM,Process,Working,,Log PAGE NUMBER IS 94, for Resident TAN-CHOY, CHUN SANG Amount is 37.38
+03/01/2024 17:36:34 PM,Process,Working,,Log PAGE NUMBER IS 96, for Resident TAYLOR, DONNA W. Amount is 15.95
+03/01/2024 17:36:49 PM,Process,Working,,Log,Unable to find the Resident Thiebaud, Doris
+03/01/2024 17:36:49 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Thiebaud, Doris Amount NOT FOUND 
+03/01/2024 17:36:56 PM,Process,Working,,Log PAGE NUMBER IS 264, for Resident WEBB, MARY L. Amount is 91.54
+03/01/2024 17:37:10 PM,Process,Working,,Log,Unable to find the Resident Wilkerson, Babara 
+03/01/2024 17:37:10 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Wilkerson, Babara  Amount NOT FOUND 
+03/01/2024 17:37:23 PM,Process,Working,,Log,Unable to find the Resident WOOD, VIRGINIA C
+03/01/2024 17:37:23 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident WOOD, VIRGINIA C Amount NOT FOUND 
+03/01/2024 17:37:28 PM,Process,Working,,Log PAGE NUMBER IS 104, for Resident WOODS, JEAN Amount is 88.44
+03/01/2024 17:37:28 PM,Process,completed,,Log,Process completed

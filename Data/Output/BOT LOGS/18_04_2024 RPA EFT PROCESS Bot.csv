@@ -1,0 +1,152 @@
+﻿Date_time,Xaml_Name,Status,UserName,LogSource,Comments
+18/04/2024 14:23:56 PM,InIt,Working,,Log,Process started
+18/04/2024 14:24:16 PM,Process,Working,,Log,Process started
+18/04/2024 14:24:16 PM,Process,Working,,FOR PA,FOR PA STARTED
+18/04/2024 14:24:39 PM,Process,Working,,Log PAGE NUMBER IS 234, for Resident Barth, Edward  Amount is 18.94
+18/04/2024 14:24:59 PM,Process,Working,,Log PAGE NUMBER IS 410, for Resident Beaver, Mary Ellen Amount is 0.00
+18/04/2024 14:25:31 PM,Process,Working,,Log,Unable to find the Resident Berg, Marcus 
+18/04/2024 14:25:33 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Berg, Marcus  Amount NOT FOUND 
+18/04/2024 14:25:41 PM,Process,Working,,Log PAGE NUMBER IS 14, for Resident Burris, Roxana D. Amount is 89.01
+18/04/2024 14:26:12 PM,Process,Working,,Log,Unable to find the Resident BURROWS , SUZANE
+18/04/2024 14:26:15 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident BURROWS , SUZANE Amount NOT FOUND 
+18/04/2024 14:26:31 PM,Process,Working,,Log PAGE NUMBER IS 345, for Resident Cole, Barbara Amount is 214.53
+18/04/2024 14:27:02 PM,Process,Working,,Log,Unable to find the Resident Coulson, Patricia 
+18/04/2024 14:27:05 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Coulson, Patricia  Amount NOT FOUND 
+18/04/2024 14:27:34 PM,Process,Working,,Log,Unable to find the Resident Derman, Bernyce
+18/04/2024 14:27:37 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Derman, Bernyce Amount NOT FOUND 
+18/04/2024 14:28:07 PM,Process,Working,,Log,Unable to find the Resident Derr, Derl
+18/04/2024 14:28:09 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Derr, Derl Amount NOT FOUND 
+18/04/2024 14:28:27 PM,Process,Working,,Log PAGE NUMBER IS 387, for Resident Eisenhart, Elizabeth Amount is 2.00
+18/04/2024 14:28:49 PM,Process,Working,,Log PAGE NUMBER IS 16, for Resident Eshleman, Anne-Marie Amount is 473.85
+18/04/2024 14:29:07 PM,Process,Working,,Log PAGE NUMBER IS 388, for Resident FREY, ALICE Amount is 1.96
+18/04/2024 14:29:26 PM,Process,Working,,Log PAGE NUMBER IS 389, for Resident FREY , STUART Amount is 2.94
+18/04/2024 14:29:33 PM,Process,Working,,Log PAGE NUMBER IS 3, for Resident George, Jean Amount is 67.96
+18/04/2024 14:29:40 PM,Process,Working,,Log PAGE NUMBER IS 4, for Resident George, John Amount is 1,065.80
+18/04/2024 14:29:59 PM,Process,Working,,Log PAGE NUMBER IS 418, for Resident Gernant, Elizabeth  Amount is 0.00
+18/04/2024 14:30:07 PM,Process,Working,,Log PAGE NUMBER IS 5, for Resident Harp, Rosanna Amount is 185.17
+18/04/2024 14:30:16 PM,Process,Working,,Log PAGE NUMBER IS 54, for Resident Hartz, Shirley  Amount is 300.19
+18/04/2024 14:30:31 PM,Process,Working,,Log PAGE NUMBER IS 241, for Resident Hensel, Roy Amount is 23.01
+18/04/2024 14:30:42 PM,Process,Working,,Log PAGE NUMBER IS 113, for Resident Hoffman, Christina Amount is 0.00
+18/04/2024 14:30:54 PM,Process,Working,,Log PAGE NUMBER IS 165, for Resident Hummer, Margaret Amount is 25.46
+18/04/2024 14:31:06 PM,Process,Working,,Log PAGE NUMBER IS 139, for Resident James, Margaret B. Amount is 213.97
+18/04/2024 14:31:24 PM,Process,Working,,Log PAGE NUMBER IS 428, for Resident Johnson, Donald Amount is 26.70
+18/04/2024 14:31:43 PM,Process,Working,,Log PAGE NUMBER IS 430, for Resident Johnson, Wilma Amount is 79.41
+18/04/2024 14:32:14 PM,Process,Working,,Log,Unable to find the Resident Kastner, Margaret
+18/04/2024 14:32:16 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Kastner, Margaret Amount NOT FOUND 
+18/04/2024 14:32:47 PM,Process,Working,,Log,Unable to find the Resident King, Natalie M.
+18/04/2024 14:32:49 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident King, Natalie M. Amount NOT FOUND 
+18/04/2024 14:33:02 PM,Process,Working,,Log PAGE NUMBER IS 192, for Resident Krebs, Leroy E. Amount is 0.00
+18/04/2024 14:33:21 PM,Process,Working,,Log PAGE NUMBER IS 432, for Resident Lahiff, Barbara Amount is 115.73
+18/04/2024 14:33:40 PM,Process,Working,,Log PAGE NUMBER IS 433, for Resident Lahiff, Lawrence Amount is 4.02
+18/04/2024 14:33:59 PM,Process,Working,,Log PAGE NUMBER IS 434, for Resident Laird, Janet  Amount is 249.83
+18/04/2024 14:34:32 PM,Process,Working,,Log,Unable to find the Resident Latshaw, Diane M.
+18/04/2024 14:34:34 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Latshaw, Diane M. Amount NOT FOUND 
+18/04/2024 14:34:48 PM,Process,Working,,Log PAGE NUMBER IS 229, for Resident Leaman, Jean Amount is 196.82
+18/04/2024 14:35:01 PM,Process,Working,,Log PAGE NUMBER IS 143, for Resident Lewis, Roberta Amount is 198.49
+18/04/2024 14:35:35 PM,Process,Working,,Log,Unable to find the Resident Libby, Dawn
+18/04/2024 14:35:37 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Libby, Dawn Amount NOT FOUND 
+18/04/2024 14:35:51 PM,Process,Working,,Log PAGE NUMBER IS 243, for Resident Lieberman, Margaret Amount is 287.51
+18/04/2024 14:36:05 PM,Process,Working,,Log PAGE NUMBER IS 193, for Resident Logsdon, Sandra L Amount is 344.83
+18/04/2024 14:36:13 PM,Process,Working,,Log PAGE NUMBER IS 7, for Resident Loring, Mary J. Amount is 221.59
+18/04/2024 14:36:34 PM,Process,Working,,Log PAGE NUMBER IS 435, for Resident Luce, Ellen Amount is 204.88
+18/04/2024 14:36:43 PM,Process,Working,,Log PAGE NUMBER IS 57, for Resident Mccarron, Michael Amount is 160.21
+18/04/2024 14:37:04 PM,Process,Working,,Log PAGE NUMBER IS 438, for Resident Miller, Glenn Amount is 0.00
+18/04/2024 14:37:37 PM,Process,Working,,Log,Unable to find the Resident Moyer, Margaret
+18/04/2024 14:37:39 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Moyer, Margaret Amount NOT FOUND 
+18/04/2024 14:38:11 PM,Process,Working,,Log,Unable to find the Resident Nelson, Gladys 
+18/04/2024 14:38:13 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Nelson, Gladys  Amount NOT FOUND 
+18/04/2024 14:38:33 PM,Process,Working,,Log PAGE NUMBER IS 440, for Resident Newman, James Amount is 83.91
+18/04/2024 14:38:50 PM,Process,Working,,Log PAGE NUMBER IS 306, for Resident Newman, Janet Amount is 144.66
+18/04/2024 14:39:06 PM,Process,Working,,Log PAGE NUMBER IS 280, for Resident Peters, Naomi Amount is 380.20
+18/04/2024 14:39:16 PM,Process,Working,,Log PAGE NUMBER IS 62, for Resident Royer, Anna Amount is 107.12
+18/04/2024 14:39:49 PM,Process,Working,,Log,Unable to find the Resident Schlag, Roy 
+18/04/2024 14:39:51 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Schlag, Roy  Amount NOT FOUND 
+18/04/2024 14:40:22 PM,Process,Working,,Log,Unable to find the Resident SEIDEL, ROSANN
+18/04/2024 14:40:25 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident SEIDEL, ROSANN Amount NOT FOUND 
+18/04/2024 14:40:39 PM,Process,Working,,Log PAGE NUMBER IS 256, for Resident Spriggle, Norma Amount is 275.48
+18/04/2024 14:40:54 PM,Process,Working,,Log PAGE NUMBER IS 258, for Resident Stamm, Celia Amount is 143.69
+18/04/2024 14:41:06 PM,Process,Working,,Log PAGE NUMBER IS 155, for Resident Stibitz, Mario Amount is 370.31
+18/04/2024 14:41:32 PM,Process,Working,,Log PAGE NUMBER IS 124, for Resident Stibitz, Bertrum  Amount is 100.42
+18/04/2024 14:41:47 PM,Process,Working,,Log PAGE NUMBER IS 262, for Resident Swank , Myra Jean  Amount is 10.41
+18/04/2024 14:42:06 PM,Process,Working,,Log PAGE NUMBER IS 448, for Resident Sukonick, Marge Amount is 50.32
+18/04/2024 14:42:15 PM,Process,Working,,Log PAGE NUMBER IS 34, for Resident Taitt, Henry  Amount is 150.23
+18/04/2024 14:42:29 PM,Process,Working,,Log PAGE NUMBER IS 203, for Resident Walters, Gwendolyn Amount is 30.34
+18/04/2024 14:42:48 PM,Process,Working,,Log PAGE NUMBER IS 405, for Resident Webb, Sheila Amount is 49.43
+18/04/2024 14:43:08 PM,Process,Working,,Log PAGE NUMBER IS 455, for Resident Wilder, David Amount is 125.94
+18/04/2024 14:43:40 PM,Process,Working,,Log,Unable to find the Resident Wilder, Margaret
+18/04/2024 14:43:42 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Wilder, Margaret Amount NOT FOUND 
+18/04/2024 14:44:01 PM,Process,Working,,Log PAGE NUMBER IS 457, for Resident Woodruff, Christine Amount is 493.58
+18/04/2024 14:44:21 PM,Process,Working,,Log PAGE NUMBER IS 458, for Resident Wright, Elizabeth Amount is 391.67
+18/04/2024 14:44:51 PM,Process,Working,,Log,Unable to find the Resident Wright, Lena
+18/04/2024 14:44:53 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Wright, Lena Amount NOT FOUND 
+18/04/2024 14:45:12 PM,Process,Working,,Log PAGE NUMBER IS 408, for Resident Wyre, Frances A. Amount is 4.65
+18/04/2024 14:45:32 PM,Process,Working,,Log PAGE NUMBER IS 460, for Resident Zimmerman, Joan Amount is 385.99
+18/04/2024 14:45:33 PM,Process,Working,,FOR PA,FOR PA COMPLETED
+18/04/2024 14:45:33 PM,Process,Working,,FOR MD,FOR MD STARTED
+18/04/2024 14:54:34 PM,InIt,Working,,Log,Process started
+18/04/2024 14:54:49 PM,Process,Working,,Log,Process started
+18/04/2024 14:54:49 PM,Process,Working,,FOR PA,FOR PA STARTED
+18/04/2024 14:54:49 PM,Process,Working,,FOR PA,FOR PA COMPLETED
+18/04/2024 14:54:49 PM,Process,Working,,FOR MD,FOR MD STARTED
+18/04/2024 14:54:59 PM,Process,Working,,Log PAGE NUMBER IS 4, for Resident Truist   Amount is 6.00
+18/04/2024 14:55:10 PM,Process,Working,,Log PAGE NUMBER IS 115, for Resident SANDY SPRING BANK Amount is 105.56
+18/04/2024 14:55:17 PM,Process,Working,,Log PAGE NUMBER IS 5, for Resident Tower Federal Union  Amount is 287.85
+18/04/2024 14:57:44 PM,InIt,Working,,Log,Process started
+18/04/2024 14:57:58 PM,Process,Working,,Log,Process started
+18/04/2024 14:57:58 PM,Process,Working,,FOR PA,FOR PA STARTED
+18/04/2024 14:57:58 PM,Process,Working,,FOR PA,FOR PA COMPLETED
+18/04/2024 14:57:58 PM,Process,Working,,FOR MD,FOR MD STARTED
+18/04/2024 14:58:09 PM,Process,Working,,Log PAGE NUMBER IS 4, for Resident Truist   Amount is 6.00
+18/04/2024 14:58:20 PM,Process,Working,,Log PAGE NUMBER IS 115, for Resident SANDY SPRING BANK Amount is 105.56
+18/04/2024 14:58:28 PM,Process,Working,,Log PAGE NUMBER IS 5, for Resident Tower Federal Union  Amount is 287.85
+18/04/2024 14:58:51 PM,Process,Working,,Log,Unable to find the Resident SIGNAL FINANCIAL FCU
+18/04/2024 14:58:53 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident SIGNAL FINANCIAL FCU Amount NOT FOUND 
+18/04/2024 14:59:00 PM,Process,Working,,Log PAGE NUMBER IS 6, for Resident M & T BANK Amount is 15.70
+18/04/2024 14:59:08 PM,Process,Working,,Log PAGE NUMBER IS 15, for Resident SANDY SPRING BANK Amount is 92.92
+18/04/2024 14:59:16 PM,Process,Working,,Log PAGE NUMBER IS 20, for Resident SANDY SPRINGS BANK Amount is 280.57
+18/04/2024 14:59:38 PM,Process,Working,,Log,Unable to find the Resident Sandy Spring Bank 
+18/04/2024 14:59:40 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Sandy Spring Bank  Amount NOT FOUND 
+18/04/2024 14:59:48 PM,Process,Working,,Log PAGE NUMBER IS 25, for Resident Citizens First Bank  Amount is 48.86
+18/04/2024 14:59:56 PM,Process,Working,,Log PAGE NUMBER IS 26, for Resident Citizens First Bank  Amount is 166.36
+18/04/2024 15:00:07 PM,Process,Working,,Log PAGE NUMBER IS 144, for Resident SANDY SPRING BANK Amount is 194.85
+18/04/2024 15:00:19 PM,Process,Working,,Log PAGE NUMBER IS 145, for Resident SANDY SPRING BANK Amount is 185.46
+18/04/2024 15:00:42 PM,Process,Working,,Log,Unable to find the Resident Shore United Bank 
+18/04/2024 15:00:44 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Shore United Bank  Amount NOT FOUND 
+18/04/2024 15:00:59 PM,Process,Working,,Log PAGE NUMBER IS 264, for Resident PNC Amount is 64.83
+18/04/2024 15:01:06 PM,Process,Working,,Log PAGE NUMBER IS 29, for Resident M&T Amount is 146.12
+18/04/2024 15:01:15 PM,Process,Working,,Log PAGE NUMBER IS 43, for Resident SANDY SPRING BANK Amount is 82.93
+18/04/2024 15:01:37 PM,Process,Working,,Log,Unable to find the Resident SANDY SPRING BANK
+18/04/2024 15:01:39 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident SANDY SPRING BANK Amount NOT FOUND 
+18/04/2024 15:02:01 PM,Process,Working,,Log,Unable to find the Resident PNC BANK N.A. 
+18/04/2024 15:02:03 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident PNC BANK N.A.  Amount NOT FOUND 
+18/04/2024 15:02:11 PM,Process,Working,,Log PAGE NUMBER IS 54, for Resident TRUIST Amount is 157.86
+18/04/2024 15:02:20 PM,Process,Working,,Log PAGE NUMBER IS 56, for Resident Bank of America  Amount is 64.38
+18/04/2024 15:02:33 PM,Process,Working,,Log PAGE NUMBER IS 166, for Resident Capital One  Amount is 525.44
+18/04/2024 15:02:42 PM,Process,Working,,Log PAGE NUMBER IS 61, for Resident Sandy Spring Bank  Amount is 152.12
+18/04/2024 15:02:52 PM,Process,Working,,Log PAGE NUMBER IS 69, for Resident SANDY SPRING BANK Amount is 125.65
+18/04/2024 15:03:01 PM,Process,Working,,Log PAGE NUMBER IS 70, for Resident BANK OF AMERICA Amount is 26.02
+18/04/2024 15:03:11 PM,Process,Working,,Log PAGE NUMBER IS 73, for Resident SANDY SPRING BANK Amount is 100.55
+18/04/2024 15:03:26 PM,Process,Working,,Log PAGE NUMBER IS 269, for Resident NAVY FEDERAL CREDIT UNION Amount is 93.58
+18/04/2024 15:03:47 PM,Process,Working,,Log,Unable to find the Resident CAPITAL ONE
+18/04/2024 15:03:50 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident CAPITAL ONE Amount NOT FOUND 
+18/04/2024 15:03:59 PM,Process,Working,,Log PAGE NUMBER IS 81, for Resident Capital One 360 Amount is 119.91
+18/04/2024 15:04:21 PM,Process,Working,,Log,Unable to find the Resident TD BANK
+18/04/2024 15:04:23 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident TD BANK Amount NOT FOUND 
+18/04/2024 15:04:37 PM,Process,Working,,Log PAGE NUMBER IS 253, for Resident TRUIST (SUNTRUST) Amount is 33.69
+18/04/2024 15:04:59 PM,Process,Working,,Log,Unable to find the Resident MID-ATLANTIC FCU
+18/04/2024 15:05:01 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident MID-ATLANTIC FCU Amount NOT FOUND 
+18/04/2024 15:05:10 PM,Process,Working,,Log PAGE NUMBER IS 87, for Resident Capital One  Amount is 47.79
+18/04/2024 15:05:32 PM,Process,Working,,Log,Unable to find the Resident PNC
+18/04/2024 15:05:34 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident PNC Amount NOT FOUND 
+18/04/2024 15:05:54 PM,Process,Working,,Log,Unable to find the Resident BANK OF AMERICA
+18/04/2024 15:05:56 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident BANK OF AMERICA Amount NOT FOUND 
+18/04/2024 15:06:06 PM,Process,Working,,Log PAGE NUMBER IS 93, for Resident CAPITAL ONE Amount is 53.00
+18/04/2024 15:06:15 PM,Process,Working,,Log PAGE NUMBER IS 92, for Resident CAPITAL ONE Amount is 42.97
+18/04/2024 15:06:36 PM,Process,Working,,Log,Unable to find the Resident Sandy Spring Bank
+18/04/2024 15:06:38 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident Sandy Spring Bank Amount NOT FOUND 
+18/04/2024 15:06:47 PM,Process,Working,,Log PAGE NUMBER IS 94, for Resident SANDY SPRING BANK Amount is 16.97
+18/04/2024 15:07:02 PM,Process,Working,,Log PAGE NUMBER IS 276, for Resident CEDAR POINT FCU Amount is 69.35
+18/04/2024 15:07:15 PM,Process,Working,,Log PAGE NUMBER IS 219, for Resident Truist Amount is 438.48
+18/04/2024 15:07:37 PM,Process,Working,,Log,Unable to find the Resident SANDY SPRING BANK
+18/04/2024 15:07:39 PM,Process,Working,,Log PAGE NUMBER IS None, for Resident SANDY SPRING BANK Amount NOT FOUND 
+18/04/2024 15:07:48 PM,Process,Working,,Log PAGE NUMBER IS 102, for Resident Library of Congress Federal Credit Union Amount is 78.54

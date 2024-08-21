@@ -1,0 +1,1653 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_str_pa_pdf_data" Type="InArgument(x:String)" />
+    <x:Property Name="in_str_md_pdf_data" Type="InArgument(x:String)" />
+    <x:Property Name="in_dt_pa_excel_data" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="in_dt_md_excel_data" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="in_python_pdf_file_path" Type="InArgument(x:String)" />
+    <x:Property Name="out_python_pagenumber" Type="InArgument(x:String)" />
+    <x:Property Name="in_str_pa_pdf_path" Type="InArgument(x:String)" />
+    <x:Property Name="in_str_md_pdf_path" Type="InArgument(x:String)" />
+    <x:Property Name="in_str_md_excel_path" Type="InArgument(x:String)" />
+    <x:Property Name="in_str_pa_excel_path" Type="InArgument(x:String)" />
+    <x:Property Name="in_str_sheetname_PA" Type="InArgument(x:String)" />
+    <x:Property Name="in_str_sheetname_MD" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Process.in_str_pa_pdf_data>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Process.in_str_pa_pdf_data>
+  <this:Process.in_str_pa_pdf_path>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Process.in_str_pa_pdf_path>
+  <this:Process.in_str_md_pdf_path>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Process.in_str_md_pdf_path>
+  <this:Process.in_str_sheetname_PA>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Process.in_str_sheetname_PA>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1130.4,1404.8</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="50">
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Windows.Forms</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.PDF.Activities</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Python</x:String>
+      <x:String>UiPath.Python.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="80">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>UiPath.Python.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
+      <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="926.4,1300" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="str1" />
+      <Variable x:TypeArguments="s:String[]" Name="str2" />
+      <Variable x:TypeArguments="x:String" Name="str3" />
+      <Variable x:TypeArguments="x:Boolean" Name="bool_writeexcel" />
+      <Variable x:TypeArguments="x:String" Name="STR_PDF" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="864,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <Sequence DisplayName="Process" sap:VirtualizedContainerService.HintSize="864,1019.2" sap2010:WorkflowViewState.IdRef="Sequence_10">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LogInfoMessages.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="801.6,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="LogInfoMessages.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_FileAuditLogPath">Data\Output\BOT LOGS</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_XamlName">Process</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_strStatus">Working</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_strTransactionName" />
+          <InArgument x:TypeArguments="x:String" x:Key="in_Source">Log</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_LogInfoMessage">Process started</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <Sequence DisplayName="EXCEL AUTOMATION" sap:VirtualizedContainerService.HintSize="801.6,721.6" sap2010:WorkflowViewState.IdRef="Sequence_22">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="sd:DataTable" Name="DT_PA_EFT_OUT" />
+          <Variable x:TypeArguments="sd:DataTable" Name="DT_MD_EFT_OUT" />
+          <Variable x:TypeArguments="x:String" Name="str_python_scriptfolder" />
+          <Variable x:TypeArguments="x:String" Name="str_python_library" />
+          <Variable x:TypeArguments="x:String" Name="str_python_path" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LogInfoMessages.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="LogInfoMessages.xaml">
+          <ui:InvokeWorkflowFile.Arguments>
+            <InArgument x:TypeArguments="x:String" x:Key="in_FileAuditLogPath">Data\Output\BOT LOGS</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_XamlName">Process</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_strStatus">Working</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_strTransactionName" />
+            <InArgument x:TypeArguments="x:String" x:Key="in_Source">FOR PA</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_LogInfoMessage">FOR PA STARTED</InArgument>
+          </ui:InvokeWorkflowFile.Arguments>
+        </ui:InvokeWorkflowFile>
+        <ui:MultipleAssign DisplayName="Multiple Assign python path" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_15">
+          <ui:MultipleAssign.AssignOperations>
+            <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_50">
+                <ui:AssignOperation.To>
+                  <OutArgument x:TypeArguments="x:String">[str_python_scriptfolder]</OutArgument>
+                </ui:AssignOperation.To>
+                <ui:AssignOperation.Value>
+                  <InArgument x:TypeArguments="x:String">C:\Users\svc_acmphm\Documents\UiPath\ACM EFT PROCESS\ACM EFT PROCESS\python script</InArgument>
+                </ui:AssignOperation.Value>
+              </ui:AssignOperation>
+              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_51">
+                <ui:AssignOperation.To>
+                  <OutArgument x:TypeArguments="x:String">[str_python_library]</OutArgument>
+                </ui:AssignOperation.To>
+                <ui:AssignOperation.Value>
+                  <InArgument x:TypeArguments="x:String">C:\Program Files\Python310\python310.dll</InArgument>
+                </ui:AssignOperation.Value>
+              </ui:AssignOperation>
+              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_52">
+                <ui:AssignOperation.To>
+                  <OutArgument x:TypeArguments="x:String">[str_python_path]</OutArgument>
+                </ui:AssignOperation.To>
+                <ui:AssignOperation.Value>
+                  <InArgument x:TypeArguments="x:String">C:\Program Files\Python310</InArgument>
+                </ui:AssignOperation.Value>
+              </ui:AssignOperation>
+            </scg:List>
+          </ui:MultipleAssign.AssignOperations>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:MultipleAssign>
+        <ui:ExcelApplicationScope Password="{x:Null}" CreateNewFile="False" DisplayName="Excel Application Scope for PA" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_7" InstanceCachePeriod="3000" WorkbookPath="[in_str_pa_excel_path]">
+          <ui:ExcelApplicationScope.Body>
+            <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="705.6,2822.4" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Sequence DisplayName="FOR PA EXCEL using python search method " sap:VirtualizedContainerService.HintSize="643.2,2710.4" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:RemoveDataRow Row="{x:Null}" DataTable="[in_dt_pa_excel_data]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="580.8,188" sap2010:WorkflowViewState.IdRef="RemoveDataRow_3" RowIndex="0">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:RemoveDataRow>
+                  <ui:RemoveDataRow Row="{x:Null}" DataTable="[in_dt_pa_excel_data]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="580.8,188" sap2010:WorkflowViewState.IdRef="RemoveDataRow_4" RowIndex="0">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:RemoveDataRow>
+                  <ui:FilterDataTable DataTable="[in_dt_pa_excel_data]" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="580.8,162.4" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[in_dt_pa_excel_data]" SelectColumnsMode="Keep">
+                    <ui:FilterDataTable.Filters>
+                      <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                        <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EMPTY">
+                          <ui:FilterOperationArgument.Column>
+                            <InArgument x:TypeArguments="x:String">["Column2"]</InArgument>
+                          </ui:FilterOperationArgument.Column>
+                        </ui:FilterOperationArgument>
+                      </scg:List>
+                    </ui:FilterDataTable.Filters>
+                    <ui:FilterDataTable.SelectColumns>
+                      <scg:List x:TypeArguments="InArgument" Capacity="4">
+                        <x:Null />
+                      </scg:List>
+                    </ui:FilterDataTable.SelectColumns>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:FilterDataTable>
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dt_pa_excel_data]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="580.8,1940" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                    <ui:ForEachRow.Body>
+                      <ActivityAction x:TypeArguments="sd:DataRow">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="547.2,1824" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="x:String" Name="STR_PA_RESIDENT_SEARCH_CELL" />
+                            <Variable x:TypeArguments="x:Int32" Name="INT_PA_RESIDENT_CELL_INNDEX" />
+                            <Variable x:TypeArguments="x:String" Name="str4" />
+                            <Variable x:TypeArguments="x:String" Name="str5" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484.8,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_19">
+                            <ui:CommentOut.Body>
+                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,197.6" sap2010:WorkflowViewState.IdRef="Sequence_90">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:02" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="387.2,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_24" Text="[&quot;Searching for Resident = &quot;+CurrentRow(&quot;Column2&quot;).ToString]" />
+                              </Sequence>
+                            </ui:CommentOut.Body>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:CommentOut>
+                          <ui:ExcelLookUpRange Range="{x:Null}" DisplayName="LookUp Range" sap:VirtualizedContainerService.HintSize="484.8,88" sap2010:WorkflowViewState.IdRef="ExcelLookUpRange_4" Result="[STR_PA_RESIDENT_SEARCH_CELL]" SheetName="[in_str_sheetname_PA]" Value="[CurrentRow(&quot;Column2&quot;).ToString]" />
+                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="484.8,836" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                            <TryCatch.Try>
+                              <ui:MultipleAssign DisplayName="Multiple Assign Last, first" sap:VirtualizedContainerService.HintSize="423.2,226.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
+                                <ui:MultipleAssign.AssignOperations>
+                                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[str1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[CurrentRow("Column2").ToString.Trim.ToUpper]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[str5]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[str1.Replace(" ,",",")]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="s:String[]">[str2]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="s:String[]">[str5.Split(" "c)]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[str4]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[str2(0).ToString.Replace(" ,",",")]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[str3]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[str4+" "+str2(1)]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                  </scg:List>
+                                </ui:MultipleAssign.AssignOperations>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:MultipleAssign>
+                            </TryCatch.Try>
+                            <TryCatch.Catches>
+                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="429.6,296.8" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ActivityAction x:TypeArguments="s:Exception">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                  </ActivityAction.Argument>
+                                  <ui:MultipleAssign DisplayName="Multiple Assign Last, first" sap:VirtualizedContainerService.HintSize="423.2,226.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_16">
+                                    <ui:MultipleAssign.AssignOperations>
+                                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_53">
+                                          <ui:AssignOperation.To>
+                                            <OutArgument x:TypeArguments="x:String">[str1]</OutArgument>
+                                          </ui:AssignOperation.To>
+                                          <ui:AssignOperation.Value>
+                                            <InArgument x:TypeArguments="x:String">[CurrentRow("Column2").ToString.Trim.ToUpper]</InArgument>
+                                          </ui:AssignOperation.Value>
+                                        </ui:AssignOperation>
+                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_54">
+                                          <ui:AssignOperation.To>
+                                            <OutArgument x:TypeArguments="x:String">[str5]</OutArgument>
+                                          </ui:AssignOperation.To>
+                                          <ui:AssignOperation.Value>
+                                            <InArgument x:TypeArguments="x:String">[str1.Replace(" ,",",")]</InArgument>
+                                          </ui:AssignOperation.Value>
+                                        </ui:AssignOperation>
+                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_55">
+                                          <ui:AssignOperation.To>
+                                            <OutArgument x:TypeArguments="s:String[]">[str2]</OutArgument>
+                                          </ui:AssignOperation.To>
+                                          <ui:AssignOperation.Value>
+                                            <InArgument x:TypeArguments="s:String[]">[str5.Split(","c)]</InArgument>
+                                          </ui:AssignOperation.Value>
+                                        </ui:AssignOperation>
+                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_56">
+                                          <ui:AssignOperation.To>
+                                            <OutArgument x:TypeArguments="x:String">[str4]</OutArgument>
+                                          </ui:AssignOperation.To>
+                                          <ui:AssignOperation.Value>
+                                            <InArgument x:TypeArguments="x:String">[str2(0)+","]</InArgument>
+                                          </ui:AssignOperation.Value>
+                                        </ui:AssignOperation>
+                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_57">
+                                          <ui:AssignOperation.To>
+                                            <OutArgument x:TypeArguments="x:String">[str3]</OutArgument>
+                                          </ui:AssignOperation.To>
+                                          <ui:AssignOperation.Value>
+                                            <InArgument x:TypeArguments="x:String">[str4+" "+str2(1)]</InArgument>
+                                          </ui:AssignOperation.Value>
+                                        </ui:AssignOperation>
+                                      </scg:List>
+                                    </ui:MultipleAssign.AssignOperations>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:MultipleAssign>
+                                </ActivityAction>
+                              </Catch>
+                            </TryCatch.Catches>
+                          </TryCatch>
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484.8,276" sap2010:WorkflowViewState.IdRef="CommentOut_9">
+                            <ui:CommentOut.Body>
+                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,197.6" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:02" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="387.2,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_7" Text="[&quot;first try :- &quot;+str3]" />
+                              </Sequence>
+                            </ui:CommentOut.Body>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:CommentOut>
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PDFPageCounter.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="484.8,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="PDFPageCounter.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_PythonScriptFolder">[str_python_scriptfolder]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_PythonPath">[str_python_path]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_PythonLibraryPath">[str_python_library]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_StrToSearch">[str3]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_InputPDFFilePath">[in_str_pa_pdf_path]</InArgument>
+                              <OutArgument x:TypeArguments="x:String" x:Key="out_PageNumber">[out_python_pagenumber]</OutArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                          </ui:InvokeWorkflowFile>
+                          <If Condition="[out_python_pagenumber.Contains(&quot;None&quot;)]" DisplayName="If not found then " sap:VirtualizedContainerService.HintSize="484.8,52.8" sap2010:WorkflowViewState.IdRef="If_3">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If.Then>
+                              <Sequence sap:VirtualizedContainerService.HintSize="528,1008.8" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="484.8,226.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
+                                  <ui:MultipleAssign.AssignOperations>
+                                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_19">
+                                        <ui:AssignOperation.To>
+                                          <OutArgument x:TypeArguments="x:String">[str1]</OutArgument>
+                                        </ui:AssignOperation.To>
+                                        <ui:AssignOperation.Value>
+                                          <InArgument x:TypeArguments="x:String">[CurrentRow("Column2").ToString.Trim.ToUpper]</InArgument>
+                                        </ui:AssignOperation.Value>
+                                      </ui:AssignOperation>
+                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_20">
+                                        <ui:AssignOperation.To>
+                                          <OutArgument x:TypeArguments="x:String">[str5]</OutArgument>
+                                        </ui:AssignOperation.To>
+                                        <ui:AssignOperation.Value>
+                                          <InArgument x:TypeArguments="x:String">[str1.Replace(" ,",",")]</InArgument>
+                                        </ui:AssignOperation.Value>
+                                      </ui:AssignOperation>
+                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_21">
+                                        <ui:AssignOperation.To>
+                                          <OutArgument x:TypeArguments="s:String[]">[str2]</OutArgument>
+                                        </ui:AssignOperation.To>
+                                        <ui:AssignOperation.Value>
+                                          <InArgument x:TypeArguments="s:String[]">[str5.Split(" "c)]</InArgument>
+                                        </ui:AssignOperation.Value>
+                                      </ui:AssignOperation>
+                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_22">
+                                        <ui:AssignOperation.To>
+                                          <OutArgument x:TypeArguments="x:String">[str4]</OutArgument>
+                                        </ui:AssignOperation.To>
+                                        <ui:AssignOperation.Value>
+                                          <InArgument x:TypeArguments="x:String">[str2(0).ToString.Replace(",","")]</InArgument>
+                                        </ui:AssignOperation.Value>
+                                      </ui:AssignOperation>
+                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_23">
+                                        <ui:AssignOperation.To>
+                                          <OutArgument x:TypeArguments="x:String">[str3]</OutArgument>
+                                        </ui:AssignOperation.To>
+                                        <ui:AssignOperation.Value>
+                                          <InArgument x:TypeArguments="x:String">[str2(1).ToString.Trim+" "+str4.ToString.Trim]</InArgument>
+                                        </ui:AssignOperation.Value>
+                                      </ui:AssignOperation>
+                                    </scg:List>
+                                  </ui:MultipleAssign.AssignOperations>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:MultipleAssign>
+                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484.8,276" sap2010:WorkflowViewState.IdRef="CommentOut_10">
+                                  <ui:CommentOut.Body>
+                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,197.6" sap2010:WorkflowViewState.IdRef="Sequence_65">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:02" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="387.2,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_8" Text="[&quot;second try :- &quot;+str3]" />
+                                    </Sequence>
+                                  </ui:CommentOut.Body>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:CommentOut>
+                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PDFPageCounter.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="484.8,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="PDFPageCounter.xaml">
+                                  <ui:InvokeWorkflowFile.Arguments>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_PythonScriptFolder">[str_python_scriptfolder]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_PythonPath">[str_python_path]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_PythonLibraryPath">[str_python_library]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_StrToSearch">[str3]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_InputPDFFilePath">[in_str_pa_pdf_path]</InArgument>
+                                    <OutArgument x:TypeArguments="x:String" x:Key="out_PageNumber">[out_python_pagenumber]</OutArgument>
+                                  </ui:InvokeWorkflowFile.Arguments>
+                                </ui:InvokeWorkflowFile>
+                                <If Condition="[out_python_pagenumber.Contains(&quot;None&quot;)]" DisplayName="If not found then log and report to user" sap:VirtualizedContainerService.HintSize="484.8,183.2" sap2010:WorkflowViewState.IdRef="If_4">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <If.Then>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="476.8,324.8" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LogInfoMessages.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="LogInfoMessages.xaml">
+                                        <ui:InvokeWorkflowFile.Arguments>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_FileAuditLogPath">Data\Output\BOT LOGS</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_XamlName">Process</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strStatus">Working</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strTransactionName" />
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_Source">Log</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_LogInfoMessage">["Unable to find the Resident "+CurrentRow("Column2").ToString]</InArgument>
+                                        </ui:InvokeWorkflowFile.Arguments>
+                                      </ui:InvokeWorkflowFile>
+                                      <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Boolean">[bool_writeexcel]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </Sequence>
+                                  </If.Then>
+                                  <If.Else>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Boolean">[bool_writeexcel]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </Sequence>
+                                  </If.Else>
+                                </If>
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_11">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Boolean">[bool_writeexcel]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                          <If Condition="[bool_writeexcel=True]" DisplayName=" if found then  WRITE RANGE" sap:VirtualizedContainerService.HintSize="484.8,52.8" sap2010:WorkflowViewState.IdRef="If_5">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If.Then>
+                              <Sequence sap:VirtualizedContainerService.HintSize="528,1876.8" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="x:String" Name="str6" />
+                                  <Variable x:TypeArguments="x:String" Name="str7" />
+                                  <Variable x:TypeArguments="x:String" Name="STR_PDF_AMOUNT" />
+                                  <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="COLL_PDF_AMOUNT" />
+                                </Sequence.Variables>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:ReadPDFText DisplayName="Read PDF Text" FileName="[in_str_pa_pdf_path]" sap:VirtualizedContainerService.HintSize="484.8,83.2" sap2010:WorkflowViewState.IdRef="ReadPDFText_1" PreserveFormatting="True" Range="[out_python_pagenumber.ToString]" Text="[STR_PDF]" />
+                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484.8,250.4" sap2010:WorkflowViewState.IdRef="CommentOut_17">
+                                  <ui:CommentOut.Body>
+                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,172" sap2010:WorkflowViewState.IdRef="Sequence_84">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:Matches BuilderPattern="(?&lt;=\D\D\sACTIVITY\sFOR\s)(.*?\W\s\W)|(?=Amount\sDue:)(.*)|(?=Credit\sAmount\s\s\s\s\s\s\s\s\s\s=)(.*)(?=\DNew)|(?=Credit\sAmount\s\s\s\s\s\s\s\s\s\s=)(.*)(?=Statement)" DisplayName="Find Matching Patterns for AMOUNT " FirstMatch="[STR_PDF_AMOUNT]" sap:VirtualizedContainerService.HintSize="387.2,60" sap2010:WorkflowViewState.IdRef="Matches_3" Input="[STR_PDF]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=\\D\\D\\sACTIVITY\\sFOR\\s)(.*?\\W\\s\\W)|(?=Amount\\sDue:)(.*)|(?=Credit\\sAmount\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s=)(.*)(?=\\DNew)|(?=Credit\\sAmount\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s=)(.*)(?=Statement)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=Amount\sDue:)(.*)|(?&lt;=Credit\sAmount\s\s\s\s\s\s\s\s\s\s=)(.*)(?=\DNew)|(?&lt;=Credit\sAmount\s\s\s\s\s\s\s\s\s\s=)(.*)(?=Statement)|(?&lt;=Credit\sAmount)(.*?\n)" RegexOption="IgnoreCase, Compiled" Result="[COLL_PDF_AMOUNT]" />
+                                    </Sequence>
+                                  </ui:CommentOut.Body>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:CommentOut>
+                                <ui:Matches BuilderPattern="(?&lt;=\D\D\sACTIVITY\sFOR\s)(.*?\W\s\W)|(?=Amount\sDue:)(.*)|(?=Credit\sAmount\s\s\s\s\s\s\s\s\s\s=)(.*)(?=\DNew)|(?=Credit\sAmount\s\s\s\s\s\s\s\s\s\s=)(.*)(?=Statement)" DisplayName="Find Matching Patterns for AMOUNT " FirstMatch="[STR_PDF_AMOUNT]" sap:VirtualizedContainerService.HintSize="484.8,60" sap2010:WorkflowViewState.IdRef="Matches_6" Input="[STR_PDF]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=\\D\\D\\sACTIVITY\\sFOR\\s)(.*?\\W\\s\\W)|(?=Amount\\sDue:)(.*)|(?=Credit\\sAmount\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s=)(.*)(?=\\DNew)|(?=Credit\\sAmount\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s=)(.*)(?=Statement)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=Amount\sDue:)(.*)|(?=Credit\sAmount\s\s\s\s\s\s\s\s\s\s=)(.*)(?=\DNew)|(?=Credit\sAmount\s\s\s\s\s\s\s\s\s\s=)(.*)(?=Statement)|(?=Credit\sAmount)(.*?\n)" RegexOption="IgnoreCase, Compiled" Result="[COLL_PDF_AMOUNT]" />
+                                <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="484.8,188" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[COLL_PDF_AMOUNT]">
+                                  <ui:ForEach.Body>
+                                    <ActivityAction x:TypeArguments="str:Match">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="str:Match" Name="currentItem" />
+                                      </ActivityAction.Argument>
+                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="630.4,1090.4" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <If Condition="[String.IsNullOrEmpty(currentItem.ToString)]" sap:VirtualizedContainerService.HintSize="587.2,1000.8" sap2010:WorkflowViewState.IdRef="If_6">
+                                          <If.Then>
+                                            <Sequence sap:VirtualizedContainerService.HintSize="300,82.4" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </Sequence>
+                                          </If.Then>
+                                          <If.Else>
+                                            <Sequence sap:VirtualizedContainerService.HintSize="553.6,735.2" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <If Condition="[currentItem.ToString.Contains(&quot;Credit Amount&quot;) or  currentItem.ToString.Contains(&quot;Credit&quot;)]" sap:VirtualizedContainerService.HintSize="510.4,645.6" sap2010:WorkflowViewState.IdRef="If_16">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <If.Then>
+                                                  <Sequence sap:VirtualizedContainerService.HintSize="476.8,292" sap2010:WorkflowViewState.IdRef="Sequence_85">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_12">
+                                                      <Assign.To>
+                                                        <OutArgument x:TypeArguments="x:String">[STR_PDF_AMOUNT]</OutArgument>
+                                                      </Assign.To>
+                                                      <Assign.Value>
+                                                        <InArgument x:TypeArguments="x:String">["-"+currentItem.ToString.Trim]</InArgument>
+                                                      </Assign.Value>
+                                                    </Assign>
+                                                    <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_23">
+                                                      <Assign.To>
+                                                        <OutArgument x:TypeArguments="x:String">[STR_PDF_AMOUNT]</OutArgument>
+                                                      </Assign.To>
+                                                      <Assign.Value>
+                                                        <InArgument x:TypeArguments="x:String">[STR_PDF_AMOUNT.Replace("Credit Amount","").ToString]</InArgument>
+                                                      </Assign.Value>
+                                                    </Assign>
+                                                  </Sequence>
+                                                </If.Then>
+                                                <If.Else>
+                                                  <Sequence sap:VirtualizedContainerService.HintSize="476.8,170.4" sap2010:WorkflowViewState.IdRef="Sequence_86">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_21">
+                                                      <Assign.To>
+                                                        <OutArgument x:TypeArguments="x:String">[STR_PDF_AMOUNT]</OutArgument>
+                                                      </Assign.To>
+                                                      <Assign.Value>
+                                                        <InArgument x:TypeArguments="x:String">[currentItem.ToString.Trim]</InArgument>
+                                                      </Assign.Value>
+                                                    </Assign>
+                                                  </Sequence>
+                                                </If.Else>
+                                              </If>
+                                            </Sequence>
+                                          </If.Else>
+                                        </If>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:ForEach.Body>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:ForEach>
+                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484.8,276" sap2010:WorkflowViewState.IdRef="CommentOut_20">
+                                  <ui:CommentOut.Body>
+                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,197.6" sap2010:WorkflowViewState.IdRef="Sequence_91">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:02" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="387.2,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_25" Text="[&quot;Resident FOUND on page number &quot;+out_python_pagenumber+&quot; With Amount = &quot;+STR_PDF_AMOUNT]" />
+                                    </Sequence>
+                                  </ui:CommentOut.Body>
+                                </ui:CommentOut>
+                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484.8,276" sap2010:WorkflowViewState.IdRef="CommentOut_11">
+                                  <ui:CommentOut.Body>
+                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,197.6" sap2010:WorkflowViewState.IdRef="Sequence_66">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:02" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="387.2,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_11" Text="[&quot;AMOUNT IS &quot;+STR_PDF_AMOUNT]" />
+                                    </Sequence>
+                                  </ui:CommentOut.Body>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:CommentOut>
+                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LogInfoMessages.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="484.8,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="LogInfoMessages.xaml">
+                                  <ui:InvokeWorkflowFile.Arguments>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_FileAuditLogPath">Data\Output\BOT LOGS</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_XamlName">Process</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_strStatus">Working</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_strTransactionName" />
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_Source">["Log PAGE NUMBER IS "+out_python_pagenumber]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_LogInfoMessage">[" for Resident "+CurrentRow("Column2").ToString+" Amount is "+STR_PDF_AMOUNT.trim.tostring]</InArgument>
+                                  </ui:InvokeWorkflowFile.Arguments>
+                                </ui:InvokeWorkflowFile>
+                                <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="484.8,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_8">
+                                  <ui:MultipleAssign.AssignOperations>
+                                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_24">
+                                        <ui:AssignOperation.To>
+                                          <OutArgument x:TypeArguments="x:String">[str6]</OutArgument>
+                                        </ui:AssignOperation.To>
+                                        <ui:AssignOperation.Value>
+                                          <InArgument x:TypeArguments="x:String">[STR_PA_RESIDENT_SEARCH_CELL]</InArgument>
+                                        </ui:AssignOperation.Value>
+                                      </ui:AssignOperation>
+                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_25">
+                                        <ui:AssignOperation.To>
+                                          <OutArgument x:TypeArguments="x:String">[str7]</OutArgument>
+                                        </ui:AssignOperation.To>
+                                        <ui:AssignOperation.Value>
+                                          <InArgument x:TypeArguments="x:String">[str6.REMOVE(0,1).ToString]</InArgument>
+                                        </ui:AssignOperation.Value>
+                                      </ui:AssignOperation>
+                                    </scg:List>
+                                  </ui:MultipleAssign.AssignOperations>
+                                </ui:MultipleAssign>
+                                <ui:ExcelWriteCell Cell="[&quot;H&quot;+str7]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="484.8,88" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="[in_str_sheetname_PA]" Text="[STR_PDF_AMOUNT.Trim.ToString]">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:ExcelWriteCell>
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence sap:VirtualizedContainerService.HintSize="528,519.2" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484.8,276" sap2010:WorkflowViewState.IdRef="CommentOut_21">
+                                  <ui:CommentOut.Body>
+                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,197.6" sap2010:WorkflowViewState.IdRef="Sequence_92">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:02" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="387.2,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_26" Text="[&quot;Resident &quot;+CurrentRow(&quot;Column2&quot;).ToString+&quot; NOT FOUND &quot;]" />
+                                    </Sequence>
+                                  </ui:CommentOut.Body>
+                                </ui:CommentOut>
+                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LogInfoMessages.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="484.8,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="LogInfoMessages.xaml">
+                                  <ui:InvokeWorkflowFile.Arguments>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_FileAuditLogPath">Data\Output\BOT LOGS</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_XamlName">Process</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_strStatus">Working</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_strTransactionName" />
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_Source">["Log PAGE NUMBER IS "+out_python_pagenumber]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_LogInfoMessage">[" for Resident "+CurrentRow("Column2").ToString+" Amount NOT FOUND "]</InArgument>
+                                  </ui:InvokeWorkflowFile.Arguments>
+                                </ui:InvokeWorkflowFile>
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEachRow.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:ForEachRow>
+                </Sequence>
+              </Sequence>
+            </ActivityAction>
+          </ui:ExcelApplicationScope.Body>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:ExcelApplicationScope>
+        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LogInfoMessages.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="LogInfoMessages.xaml">
+          <ui:InvokeWorkflowFile.Arguments>
+            <InArgument x:TypeArguments="x:String" x:Key="in_FileAuditLogPath">Data\Output\BOT LOGS</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_XamlName">Process</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_strStatus">Working</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_strTransactionName" />
+            <InArgument x:TypeArguments="x:String" x:Key="in_Source">FOR PA</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_LogInfoMessage">FOR PA COMPLETED</InArgument>
+          </ui:InvokeWorkflowFile.Arguments>
+        </ui:InvokeWorkflowFile>
+        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LogInfoMessages.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="LogInfoMessages.xaml">
+          <ui:InvokeWorkflowFile.Arguments>
+            <InArgument x:TypeArguments="x:String" x:Key="in_FileAuditLogPath">Data\Output\BOT LOGS</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_XamlName">Process</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_strStatus">Working</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_strTransactionName" />
+            <InArgument x:TypeArguments="x:String" x:Key="in_Source">FOR MD</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_LogInfoMessage">FOR MD STARTED</InArgument>
+          </ui:InvokeWorkflowFile.Arguments>
+        </ui:InvokeWorkflowFile>
+        <ui:ExcelApplicationScope Password="{x:Null}" CreateNewFile="False" DisplayName="Excel Application Scope for MD" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_4" InstanceCachePeriod="3000" WorkbookPath="[in_str_md_excel_path]">
+          <ui:ExcelApplicationScope.Body>
+            <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,83.2" sap2010:WorkflowViewState.IdRef="Sequence_63">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Sequence DisplayName="FOR MD EXCEL using python search method " sap:VirtualizedContainerService.HintSize="449.6,536" sap2010:WorkflowViewState.IdRef="Sequence_62">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:RemoveDataRow Row="{x:Null}" DataTable="[in_dt_md_excel_data]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="RemoveDataRow_5" RowIndex="0">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:RemoveDataRow>
+                  <ui:RemoveDataRow Row="{x:Null}" DataTable="[in_dt_md_excel_data]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="RemoveDataRow_6" RowIndex="0">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:RemoveDataRow>
+                  <ui:RemoveDataRow Row="{x:Null}" DataTable="[in_dt_md_excel_data]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="RemoveDataRow_7" RowIndex="0">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:RemoveDataRow>
+                  <ui:FilterDataTable DataTable="[in_dt_md_excel_data]" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="FilterDataTable_3" OutputDataTable="[in_dt_md_excel_data]" SelectColumnsMode="Keep">
+                    <ui:FilterDataTable.Filters>
+                      <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                        <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EMPTY">
+                          <ui:FilterOperationArgument.Column>
+                            <InArgument x:TypeArguments="x:String">["Column1"]</InArgument>
+                          </ui:FilterOperationArgument.Column>
+                        </ui:FilterOperationArgument>
+                      </scg:List>
+                    </ui:FilterDataTable.Filters>
+                    <ui:FilterDataTable.SelectColumns>
+                      <scg:List x:TypeArguments="InArgument" Capacity="4">
+                        <x:Null />
+                      </scg:List>
+                    </ui:FilterDataTable.SelectColumns>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:FilterDataTable>
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dt_md_excel_data]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="483.20000000000005,199.2" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+                    <ui:ForEachRow.Body>
+                      <ActivityAction x:TypeArguments="sd:DataRow">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="449.6,164.8" sap2010:WorkflowViewState.IdRef="Sequence_67">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="x:String" Name="STR_PA_RESIDENT_SEARCH_CELL" />
+                            <Variable x:TypeArguments="x:Int32" Name="INT_PA_RESIDENT_CELL_INNDEX" />
+                            <Variable x:TypeArguments="x:String" Name="str4" />
+                            <Variable x:TypeArguments="x:String" Name="str5" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If Condition="[CurrentRow(&quot;Column1&quot;).ToString =&quot;&quot; or string.IsNullOrEmpty(CurrentRow(&quot;Column1&quot;).ToString)]" DisplayName="If null" sap:VirtualizedContainerService.HintSize="334.4,343.2" sap2010:WorkflowViewState.IdRef="If_15">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If.Then>
+                              <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_82">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence sap:VirtualizedContainerService.HintSize="784,4224.8" sap2010:WorkflowViewState.IdRef="Sequence_83">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:ExcelLookUpRange Range="{x:Null}" DisplayName="LookUp Range" sap:VirtualizedContainerService.HintSize="740.8,52.8" sap2010:WorkflowViewState.IdRef="ExcelLookUpRange_6" Result="[STR_PA_RESIDENT_SEARCH_CELL]" SheetName="[in_str_sheetname_MD]" Value="[CurrentRow(&quot;Column1&quot;).ToString]">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:ExcelLookUpRange>
+                                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="463.2,461.6" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <TryCatch.Try>
+                                    <ui:MultipleAssign DisplayName="Multiple Assign Last, first" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_12">
+                                      <ui:MultipleAssign.AssignOperations>
+                                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_38">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:String">[str1]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:String">[CurrentRow("Column1").ToString.Trim.ToUpper]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_39">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:String">[str5]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:String">[str1.Replace(" ,",",")]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_40">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="s:String[]">[str2]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="s:String[]">[str5.Split(" "c)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_41">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:String">[str4]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:String">[str2(0).ToString.Replace(" ,",",")]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_42">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:String">[str3]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:String">[str4+" "+str2(1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                        </scg:List>
+                                      </ui:MultipleAssign.AssignOperations>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </ui:MultipleAssign>
+                                  </TryCatch.Try>
+                                  <TryCatch.Catches>
+                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="429.6,296.8" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ActivityAction x:TypeArguments="s:Exception">
+                                        <ActivityAction.Argument>
+                                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                        </ActivityAction.Argument>
+                                        <ui:MultipleAssign DisplayName="Multiple Assign Last, first" sap:VirtualizedContainerService.HintSize="423.2,226.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_17">
+                                          <ui:MultipleAssign.AssignOperations>
+                                            <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_68">
+                                                <ui:AssignOperation.To>
+                                                  <OutArgument x:TypeArguments="x:String">[str1]</OutArgument>
+                                                </ui:AssignOperation.To>
+                                                <ui:AssignOperation.Value>
+                                                  <InArgument x:TypeArguments="x:String">[CurrentRow("Column1").ToString.Trim.ToUpper]</InArgument>
+                                                </ui:AssignOperation.Value>
+                                              </ui:AssignOperation>
+                                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_69">
+                                                <ui:AssignOperation.To>
+                                                  <OutArgument x:TypeArguments="x:String">[str5]</OutArgument>
+                                                </ui:AssignOperation.To>
+                                                <ui:AssignOperation.Value>
+                                                  <InArgument x:TypeArguments="x:String">[str1.Replace(" ,",",")]</InArgument>
+                                                </ui:AssignOperation.Value>
+                                              </ui:AssignOperation>
+                                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_70">
+                                                <ui:AssignOperation.To>
+                                                  <OutArgument x:TypeArguments="s:String[]">[str2]</OutArgument>
+                                                </ui:AssignOperation.To>
+                                                <ui:AssignOperation.Value>
+                                                  <InArgument x:TypeArguments="s:String[]">[str5.Split(","c)]</InArgument>
+                                                </ui:AssignOperation.Value>
+                                              </ui:AssignOperation>
+                                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_71">
+                                                <ui:AssignOperation.To>
+                                                  <OutArgument x:TypeArguments="x:String">[str4]</OutArgument>
+                                                </ui:AssignOperation.To>
+                                                <ui:AssignOperation.Value>
+                                                  <InArgument x:TypeArguments="x:String">[str2(0).ToString+","]</InArgument>
+                                                </ui:AssignOperation.Value>
+                                              </ui:AssignOperation>
+                                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_72">
+                                                <ui:AssignOperation.To>
+                                                  <OutArgument x:TypeArguments="x:String">[str3]</OutArgument>
+                                                </ui:AssignOperation.To>
+                                                <ui:AssignOperation.Value>
+                                                  <InArgument x:TypeArguments="x:String">[str4+" "+str2(1)]</InArgument>
+                                                </ui:AssignOperation.Value>
+                                              </ui:AssignOperation>
+                                            </scg:List>
+                                          </ui:MultipleAssign.AssignOperations>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </ui:MultipleAssign>
+                                      </ActivityAction>
+                                    </Catch>
+                                  </TryCatch.Catches>
+                                </TryCatch>
+                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="740.8,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_12">
+                                  <ui:CommentOut.Body>
+                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,197.6" sap2010:WorkflowViewState.IdRef="Sequence_69">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:02" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="387.2,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_19" Text="[&quot;first try :- &quot;+str3]" />
+                                    </Sequence>
+                                  </ui:CommentOut.Body>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:CommentOut>
+                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PDFPageCounter.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="740.8,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="PDFPageCounter.xaml">
+                                  <ui:InvokeWorkflowFile.Arguments>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_PythonScriptFolder">[str_python_scriptfolder]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_PythonPath">[str_python_path]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_PythonLibraryPath">[str_python_library]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_StrToSearch">[str3]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_InputPDFFilePath">[in_str_md_pdf_path]</InArgument>
+                                    <OutArgument x:TypeArguments="x:String" x:Key="out_PageNumber">[out_python_pagenumber]</OutArgument>
+                                  </ui:InvokeWorkflowFile.Arguments>
+                                </ui:InvokeWorkflowFile>
+                                <If Condition="[out_python_pagenumber.Contains(&quot;None&quot;)]" DisplayName="If not found then " sap:VirtualizedContainerService.HintSize="740.8,52.8" sap2010:WorkflowViewState.IdRef="If_11">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <If.Then>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="553.6,1333.6" sap2010:WorkflowViewState.IdRef="Sequence_73">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="510.4,226.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_13">
+                                        <ui:MultipleAssign.AssignOperations>
+                                          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_43">
+                                              <ui:AssignOperation.To>
+                                                <OutArgument x:TypeArguments="x:String">[str1]</OutArgument>
+                                              </ui:AssignOperation.To>
+                                              <ui:AssignOperation.Value>
+                                                <InArgument x:TypeArguments="x:String">[CurrentRow("Column1").ToString.Trim.ToUpper]</InArgument>
+                                              </ui:AssignOperation.Value>
+                                            </ui:AssignOperation>
+                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_44">
+                                              <ui:AssignOperation.To>
+                                                <OutArgument x:TypeArguments="x:String">[str5]</OutArgument>
+                                              </ui:AssignOperation.To>
+                                              <ui:AssignOperation.Value>
+                                                <InArgument x:TypeArguments="x:String">[str1.Replace(" ,",",")]</InArgument>
+                                              </ui:AssignOperation.Value>
+                                            </ui:AssignOperation>
+                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_45">
+                                              <ui:AssignOperation.To>
+                                                <OutArgument x:TypeArguments="s:String[]">[str2]</OutArgument>
+                                              </ui:AssignOperation.To>
+                                              <ui:AssignOperation.Value>
+                                                <InArgument x:TypeArguments="s:String[]">[str5.Split(" "c)]</InArgument>
+                                              </ui:AssignOperation.Value>
+                                            </ui:AssignOperation>
+                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_46">
+                                              <ui:AssignOperation.To>
+                                                <OutArgument x:TypeArguments="x:String">[str4]</OutArgument>
+                                              </ui:AssignOperation.To>
+                                              <ui:AssignOperation.Value>
+                                                <InArgument x:TypeArguments="x:String">[str2(0).ToString.Replace(",","")]</InArgument>
+                                              </ui:AssignOperation.Value>
+                                            </ui:AssignOperation>
+                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_47">
+                                              <ui:AssignOperation.To>
+                                                <OutArgument x:TypeArguments="x:String">[str3]</OutArgument>
+                                              </ui:AssignOperation.To>
+                                              <ui:AssignOperation.Value>
+                                                <InArgument x:TypeArguments="x:String">[str2(1).ToString.Trim+" "+str4.ToString.Trim]</InArgument>
+                                              </ui:AssignOperation.Value>
+                                            </ui:AssignOperation>
+                                          </scg:List>
+                                        </ui:MultipleAssign.AssignOperations>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:MultipleAssign>
+                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="510.4,276" sap2010:WorkflowViewState.IdRef="CommentOut_13">
+                                        <ui:CommentOut.Body>
+                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,197.6" sap2010:WorkflowViewState.IdRef="Sequence_70">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:02" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="387.2,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_20" Text="[&quot;second try :- &quot;+str3]" />
+                                          </Sequence>
+                                        </ui:CommentOut.Body>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:CommentOut>
+                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PDFPageCounter.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="510.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="PDFPageCounter.xaml">
+                                        <ui:InvokeWorkflowFile.Arguments>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_PythonScriptFolder">[str_python_scriptfolder]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_PythonPath">[str_python_path]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_PythonLibraryPath">[str_python_library]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrToSearch">[str3]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_InputPDFFilePath">[in_str_md_pdf_path]</InArgument>
+                                          <OutArgument x:TypeArguments="x:String" x:Key="out_PageNumber">[out_python_pagenumber]</OutArgument>
+                                        </ui:InvokeWorkflowFile.Arguments>
+                                      </ui:InvokeWorkflowFile>
+                                      <If Condition="[out_python_pagenumber.Contains(&quot;None&quot;)]" DisplayName="If not found then log and report to user" sap:VirtualizedContainerService.HintSize="510.4,508" sap2010:WorkflowViewState.IdRef="If_13">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <If.Then>
+                                          <Sequence sap:VirtualizedContainerService.HintSize="476.8,324.8" sap2010:WorkflowViewState.IdRef="Sequence_71">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LogInfoMessages.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="LogInfoMessages.xaml">
+                                              <ui:InvokeWorkflowFile.Arguments>
+                                                <InArgument x:TypeArguments="x:String" x:Key="in_FileAuditLogPath">Data\Output\BOT LOGS</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="in_XamlName">Process</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="in_strStatus">Working</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="in_strTransactionName" />
+                                                <InArgument x:TypeArguments="x:String" x:Key="in_Source">Log</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="in_LogInfoMessage">["Unable to find the Resident "+CurrentRow("Column2").ToString]</InArgument>
+                                              </ui:InvokeWorkflowFile.Arguments>
+                                            </ui:InvokeWorkflowFile>
+                                            <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_17">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:Boolean">[bool_writeexcel]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                          </Sequence>
+                                        </If.Then>
+                                        <If.Else>
+                                          <Sequence sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_72">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_18">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:Boolean">[bool_writeexcel]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                          </Sequence>
+                                        </If.Else>
+                                      </If>
+                                    </Sequence>
+                                  </If.Then>
+                                  <If.Else>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="476.79999999999995,170.4" sap2010:WorkflowViewState.IdRef="Sequence_74">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_19">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Boolean">[bool_writeexcel]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </Sequence>
+                                  </If.Else>
+                                </If>
+                                <If Condition="[bool_writeexcel=True]" DisplayName=" if found then  WRITE RANGE" sap:VirtualizedContainerService.HintSize="740.8,3671.2" sap2010:WorkflowViewState.IdRef="If_12">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <If.Then>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="707.2,2968.8" sap2010:WorkflowViewState.IdRef="Sequence_68">
+                                      <Sequence.Variables>
+                                        <Variable x:TypeArguments="x:String" Name="str6" />
+                                        <Variable x:TypeArguments="x:String" Name="str7" />
+                                        <Variable x:TypeArguments="x:String" Name="STR_PDF_AMOUNT" />
+                                        <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="COLL_PDF_AMOUNT" />
+                                      </Sequence.Variables>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:ReadPDFText DisplayName="Read PDF Text" FileName="[in_str_md_pdf_path]" sap:VirtualizedContainerService.HintSize="664,83.2" sap2010:WorkflowViewState.IdRef="ReadPDFText_3" PreserveFormatting="True" Range="[out_python_pagenumber.ToString]" Text="[STR_PDF]" />
+                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="664,250.4" sap2010:WorkflowViewState.IdRef="CommentOut_18">
+                                        <ui:CommentOut.Body>
+                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,172" sap2010:WorkflowViewState.IdRef="Sequence_87">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:Matches BuilderPattern="(?&lt;=\D\D\sACTIVITY\sFOR\s)(.*?\W\s\W)|(?=Amount\sDue:)(.*)|(?=Credit\sAmount\s\s\s\s\s\s\s\s\s\s=)(.*)(?=\DNew)|(?=Credit\sAmount\s\s\s\s\s\s\s\s\s\s=)(.*)(?=Statement)" DisplayName="Find Matching Patterns for AMOUNT " FirstMatch="[STR_PDF_AMOUNT]" sap:VirtualizedContainerService.HintSize="387.2,60" sap2010:WorkflowViewState.IdRef="Matches_5" Input="[STR_PDF]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=\\D\\D\\sACTIVITY\\sFOR\\s)(.*?\\W\\s\\W)|(?=Amount\\sDue:)(.*)|(?=Credit\\sAmount\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s=)(.*)(?=\\DNew)|(?=Credit\\sAmount\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s=)(.*)(?=Statement)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=Amount\sDue:)(.*)|(?&lt;=Credit\sAmount\s\s\s\s\s\s\s\s\s\s=)(.*)(?=\DNew)|(?&lt;=Credit\sAmount\s\s\s\s\s\s\s\s\s\s=)(.*)(?=Statement)|(?&lt;=Credit\sAmount)(.*?\n)" RegexOption="IgnoreCase, Compiled" Result="[COLL_PDF_AMOUNT]" />
+                                          </Sequence>
+                                        </ui:CommentOut.Body>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:CommentOut>
+                                      <ui:Matches BuilderPattern="(?&lt;=\D\D\sACTIVITY\sFOR\s)(.*?\W\s\W)|(?=Amount\sDue:)(.*)|(?=Credit\sAmount\s\s\s\s\s\s\s\s\s\s=)(.*)(?=\DNew)|(?=Credit\sAmount\s\s\s\s\s\s\s\s\s\s=)(.*)(?=Statement)" DisplayName="Find Matching Patterns for AMOUNT " FirstMatch="[STR_PDF_AMOUNT]" sap:VirtualizedContainerService.HintSize="664,60" sap2010:WorkflowViewState.IdRef="Matches_7" Input="[STR_PDF]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=\\D\\D\\sACTIVITY\\sFOR\\s)(.*?\\W\\s\\W)|(?=Amount\\sDue:)(.*)|(?=Credit\\sAmount\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s=)(.*)(?=\\DNew)|(?=Credit\\sAmount\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s=)(.*)(?=Statement)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=Amount\sDue:)(.*)|(?=Credit\sAmount\s\s\s\s\s\s\s\s\s\s=)(.*)(?=\DNew)|(?=Credit\sAmount\s\s\s\s\s\s\s\s\s\s=)(.*)(?=Statement)|(?=Credit\sAmount)(.*?\n)" RegexOption="IgnoreCase, Compiled" Result="[COLL_PDF_AMOUNT]" />
+                                      <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="664,1280" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[COLL_PDF_AMOUNT]">
+                                        <ui:ForEach.Body>
+                                          <ActivityAction x:TypeArguments="str:Match">
+                                            <ActivityAction.Argument>
+                                              <DelegateInArgument x:TypeArguments="str:Match" Name="currentItem" />
+                                            </ActivityAction.Argument>
+                                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="630.4,1092" sap2010:WorkflowViewState.IdRef="Sequence_77">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <If Condition="[String.IsNullOrEmpty(currentItem.ToString)]" sap:VirtualizedContainerService.HintSize="587.2,1002.4" sap2010:WorkflowViewState.IdRef="If_14">
+                                                <If.Then>
+                                                  <Sequence sap:VirtualizedContainerService.HintSize="300,82.4" sap2010:WorkflowViewState.IdRef="Sequence_75">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </Sequence>
+                                                </If.Then>
+                                                <If.Else>
+                                                  <Sequence sap:VirtualizedContainerService.HintSize="553.6,736.8" sap2010:WorkflowViewState.IdRef="Sequence_76">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <If Condition="[currentItem.ToString.Contains(&quot;Credit Amount&quot;) or currentItem.ToString.Contains(&quot;Credit&quot;)]" sap:VirtualizedContainerService.HintSize="510.4,647.2" sap2010:WorkflowViewState.IdRef="If_17">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <If.Then>
+                                                        <Sequence sap:VirtualizedContainerService.HintSize="476.8,292.8" sap2010:WorkflowViewState.IdRef="Sequence_88">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_22">
+                                                            <Assign.To>
+                                                              <OutArgument x:TypeArguments="x:String">[STR_PDF_AMOUNT]</OutArgument>
+                                                            </Assign.To>
+                                                            <Assign.Value>
+                                                              <InArgument x:TypeArguments="x:String">["-"+currentItem.ToString.Trim]</InArgument>
+                                                            </Assign.Value>
+                                                          </Assign>
+                                                          <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_24">
+                                                            <Assign.To>
+                                                              <OutArgument x:TypeArguments="x:String">[STR_PDF_AMOUNT]</OutArgument>
+                                                            </Assign.To>
+                                                            <Assign.Value>
+                                                              <InArgument x:TypeArguments="x:String">[STR_PDF_AMOUNT.Replace("Credit Amount","").ToString]</InArgument>
+                                                            </Assign.Value>
+                                                          </Assign>
+                                                        </Sequence>
+                                                      </If.Then>
+                                                      <If.Else>
+                                                        <Sequence sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_89">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_20">
+                                                            <Assign.To>
+                                                              <OutArgument x:TypeArguments="x:String">[STR_PDF_AMOUNT]</OutArgument>
+                                                            </Assign.To>
+                                                            <Assign.Value>
+                                                              <InArgument x:TypeArguments="x:String">[currentItem.ToString.Trim]</InArgument>
+                                                            </Assign.Value>
+                                                          </Assign>
+                                                        </Sequence>
+                                                      </If.Else>
+                                                    </If>
+                                                  </Sequence>
+                                                </If.Else>
+                                              </If>
+                                            </Sequence>
+                                          </ActivityAction>
+                                        </ui:ForEach.Body>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:ForEach>
+                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="664,276" sap2010:WorkflowViewState.IdRef="CommentOut_23">
+                                        <ui:CommentOut.Body>
+                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,197.6" sap2010:WorkflowViewState.IdRef="Sequence_94">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:02" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="387.2,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_28" Text="[&quot;Resident FOUND on page number &quot;+out_python_pagenumber+&quot; With Amount = &quot;+STR_PDF_AMOUNT]" />
+                                          </Sequence>
+                                        </ui:CommentOut.Body>
+                                      </ui:CommentOut>
+                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="664,276" sap2010:WorkflowViewState.IdRef="CommentOut_14">
+                                        <ui:CommentOut.Body>
+                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,197.6" sap2010:WorkflowViewState.IdRef="Sequence_78">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:02" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="387.2,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_22" Text="[&quot;AMOUNT IS &quot;+STR_PDF_AMOUNT]" />
+                                          </Sequence>
+                                        </ui:CommentOut.Body>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:CommentOut>
+                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LogInfoMessages.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="664,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="LogInfoMessages.xaml">
+                                        <ui:InvokeWorkflowFile.Arguments>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_FileAuditLogPath">Data\Output\BOT LOGS</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_XamlName">Process</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strStatus">Working</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strTransactionName" />
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_Source">["Log PAGE NUMBER IS "+out_python_pagenumber]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_LogInfoMessage">[" for Resident "+CurrentRow("Column2").ToString+" Amount is "+STR_PDF_AMOUNT.trim.tostring]</InArgument>
+                                        </ui:InvokeWorkflowFile.Arguments>
+                                      </ui:InvokeWorkflowFile>
+                                      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="664,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_14">
+                                        <ui:MultipleAssign.AssignOperations>
+                                          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_48">
+                                              <ui:AssignOperation.To>
+                                                <OutArgument x:TypeArguments="x:String">[str6]</OutArgument>
+                                              </ui:AssignOperation.To>
+                                              <ui:AssignOperation.Value>
+                                                <InArgument x:TypeArguments="x:String">[STR_PA_RESIDENT_SEARCH_CELL]</InArgument>
+                                              </ui:AssignOperation.Value>
+                                            </ui:AssignOperation>
+                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_49">
+                                              <ui:AssignOperation.To>
+                                                <OutArgument x:TypeArguments="x:String">[str7]</OutArgument>
+                                              </ui:AssignOperation.To>
+                                              <ui:AssignOperation.Value>
+                                                <InArgument x:TypeArguments="x:String">[str6.REMOVE(0,1).ToString]</InArgument>
+                                              </ui:AssignOperation.Value>
+                                            </ui:AssignOperation>
+                                          </scg:List>
+                                        </ui:MultipleAssign.AssignOperations>
+                                      </ui:MultipleAssign>
+                                      <ui:ExcelWriteCell Cell="[&quot;G&quot;+str7]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="664,88" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" SheetName="[in_str_sheetname_MD]" Text="[STR_PDF_AMOUNT.Trim.ToString]">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:ExcelWriteCell>
+                                    </Sequence>
+                                  </If.Then>
+                                  <If.Else>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="528,519.2" sap2010:WorkflowViewState.IdRef="Sequence_79">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484.8,276" sap2010:WorkflowViewState.IdRef="CommentOut_24">
+                                        <ui:CommentOut.Body>
+                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,197.6" sap2010:WorkflowViewState.IdRef="Sequence_95">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:02" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="387.2,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_29" Text="[&quot;Resident &quot;+CurrentRow(&quot;Column2&quot;).ToString+&quot; NOT FOUND &quot;]" />
+                                          </Sequence>
+                                        </ui:CommentOut.Body>
+                                      </ui:CommentOut>
+                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LogInfoMessages.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="484.8,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="LogInfoMessages.xaml">
+                                        <ui:InvokeWorkflowFile.Arguments>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_FileAuditLogPath">Data\Output\BOT LOGS</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_XamlName">Process</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strStatus">Working</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strTransactionName" />
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_Source">["Log PAGE NUMBER IS "+out_python_pagenumber]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_LogInfoMessage">[" for Resident "+CurrentRow("Column2").ToString+" Amount NOT FOUND "]</InArgument>
+                                        </ui:InvokeWorkflowFile.Arguments>
+                                      </ui:InvokeWorkflowFile>
+                                    </Sequence>
+                                  </If.Else>
+                                </If>
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEachRow.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:ForEachRow>
+                </Sequence>
+              </Sequence>
+            </ActivityAction>
+          </ui:ExcelApplicationScope.Body>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:ExcelApplicationScope>
+        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:04" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="MessageBox_30" Text="[&quot;Bot Processing Finished Please take the output excel files from C:\Users\svc_acmphm\Downloads\Excel files&quot;]">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:MessageBox>
+      </Sequence>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LogInfoMessages.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="801.6,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="LogInfoMessages.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_FileAuditLogPath">Data\Output\BOT LOGS</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_XamlName">Process</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_strStatus">completed</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_strTransactionName" />
+          <InArgument x:TypeArguments="x:String" x:Key="in_Source">Log</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_LogInfoMessage">Process completed</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+    </Sequence>
+  </Sequence>
+</Activity>

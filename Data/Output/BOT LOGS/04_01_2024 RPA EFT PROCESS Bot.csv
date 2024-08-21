@@ -1,0 +1,21 @@
+﻿Date_time,Xaml_Name,Status,UserName,LogSource,Comments
+04/01/2024 10:46:24 AM,InIt,Working,,Log,Process started
+04/01/2024 10:46:42 AM,Process,Working,,Log,Process started
+04/01/2024 10:46:42 AM,Process,Working,,FOR PA,FOR PA STARTED
+04/01/2024 10:48:54 AM,InIt,Working,,Log,Process started
+04/01/2024 10:49:10 AM,Process,Working,,Log,Process started
+04/01/2024 10:49:10 AM,Process,Working,,FOR PA,FOR PA STARTED
+04/01/2024 10:58:06 AM,InIt,Working,,Log,Process started
+04/01/2024 10:58:22 AM,Process,Working,,Log,Process started
+04/01/2024 10:58:22 AM,Process,Working,,FOR PA,FOR PA STARTED
+04/01/2024 10:58:42 AM,Process,Working,,Log PAGE NUMBER IS 234, for Resident Barth, Edward  Amount is 155.28
+04/01/2024 10:58:56 AM,Process,Working,,Log PAGE NUMBER IS 227, for Resident Coulson, Patricia  Amount is 4.48
+04/01/2024 10:59:26 AM,Process,Working,,Log,Unable to find the Resident Berg, Marcus 
+04/01/2024 10:59:28 AM,Process,Working,,Log PAGE NUMBER IS None, for Resident Berg, Marcus  Amount NOT FOUND 
+04/01/2024 10:59:36 AM,Process,Working,,Log PAGE NUMBER IS 20, for Resident Burris, Roxana D. Amount is 97.59
+04/01/2024 11:53:44 AM,InIt,Working,,Log,Process started
+04/01/2024 11:53:45 AM,InIt,Exception,,Log,PA EXCEL NOT FOUND
+04/01/2024 11:55:22 AM,InIt Document not found,EXCEPTION,,Log,PA EXCEL FILE NOT FOUND
+04/01/2024 11:56:40 AM,InIt,Working,,Log,Process started
+04/01/2024 11:56:40 AM,InIt,Exception,,Log,PA EXCEL NOT FOUND
+04/01/2024 11:56:40 AM,InIt Document not found,EXCEPTION,,Log,PA EXCEL FILE NOT FOUND
